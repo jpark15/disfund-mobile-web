@@ -66,7 +66,7 @@ class ExpendituresController < ApplicationController
 
   private
   def load_arrays_for_create
-    @quarterly_budgets = QuarterlyBudget.all.map{|budget| [budget.quarteryear, budget.id]}
+    @quarterly_budgets = QuarterlyBudget.all.map{|budget| [budget, budget.id]}
     @types = SettingsType.all.map{|type| [type.description, type.id]}
   end
 
