@@ -1,0 +1,41 @@
+<h1>Expenditure Details</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quarterly budget:</strong>
+  <%= @expenditure.quarterly_budget_id %>
+</p>
+
+<p>
+  <strong>Purchase date:</strong>
+  <%= @expenditure.purchase_date %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @expenditure.item %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= SettingsType.find(@expenditure.type_id).description %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= number_to_currency @expenditure.cost.to_f %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @expenditure.notes %>
+</p>
+
+<p>
+  <strong>Refunded:</strong>
+  <%= @expenditure.refunded.to_s.humanize %>
+</p>
+
+<%= link_to 'Edit', edit_expenditure_path(@expenditure) %> |
+<%= link_to 'Back', expenditures_path %>

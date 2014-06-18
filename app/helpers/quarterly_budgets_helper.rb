@@ -1,0 +1,2 @@
+module QuarterlyBudgetsHelper
+end

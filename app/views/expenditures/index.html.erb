@@ -1,0 +1,37 @@
+<h1>Listing All Expenditures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Year-Q#</th>
+      <th>Purchase Date</th>
+      <th>Cost</th>
+      <th>Item</th>
+      <th>Type</th>
+      <th>Notes</th>
+      <th>Refunded</th>
+      <th colspan="3">Links</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @expenditures.each do |expenditure| %>
+      <tr>
+        <td><%= QuarterlyBudget.find(expenditure.quarterly_budget_id).quarteryear %></td>
+        <td><%= expenditure.purchase_date %></td>
+        <td><%= number_to_currency(expenditure.cost.to_f) %></td>
+        <td><%= expenditure.item %></td>
+        <td><%= SettingsType.find(expenditure.type_id).description %></td>
+        <td><%= expenditure.notes %></td>
+        <td><%= expenditure.refunded.to_s.humanize %></td>
+        <td><%= link_to 'Show', expenditure %></td>
+        <td><%= link_to 'Edit', edit_expenditure_path(expenditure) %></td>
+        <td><%= link_to 'Destroy', expenditure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Create New Expenditure', new_expenditure_path %>

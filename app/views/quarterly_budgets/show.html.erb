@@ -1,0 +1,31 @@
+<h1>Quarterly Budget Details</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @quarterly_budget.year %>
+</p>
+
+<p>
+  <strong>Quarter:</strong>
+  <%= @quarterly_budget.quarter %>
+</p>
+
+<p>
+  <strong>Start Balance:</strong>
+  <%= number_to_currency @quarterly_budget.start_balance.to_f %>
+</p>
+
+<p>
+  <strong>Current Balance:</strong>
+  <%= number_to_currency @quarterly_budget.current_balance.to_f %>
+</p>
+
+<p>
+  <strong>End Balance:</strong>
+  <%= number_to_currency @quarterly_budget.end_balance.to_f %>
+</p>
+
+<%= link_to 'Edit', edit_quarterly_budget_path(@quarterly_budget) %> |
+<%= link_to 'Back', quarterly_budgets_path %>

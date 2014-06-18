@@ -1,0 +1,29 @@
+<%= form_for(@quarterly_budget) do |f| %>
+  <% if @quarterly_budget.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quarterly_budget.errors.count, "error") %> prohibited this quarterly_budget from being saved:</h2>
+
+      <ul>
+      <% @quarterly_budget.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.number_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :quarter %><br>
+    <%= f.number_field :quarter %>
+  </div>
+  <div class="field">
+    <%= f.label :start_balance %><br>
+    <%= f.text_field :start_balance %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Update Quarterly Budget"%>
+  </div>
+<% end %>

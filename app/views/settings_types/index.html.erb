@@ -1,0 +1,24 @@
+<h1>Listing All Expenditure Types</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th colspan="3">Links</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @settings_types.each do |settings_type| %>
+      <tr>
+        <td><%= settings_type.description %></td>
+        <td><%= link_to 'Show', settings_type %></td>
+        <td><%= link_to 'Edit', edit_settings_type_path(settings_type) %></td>
+        <td><%= link_to 'Destroy', settings_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Create New Type', new_settings_type_path %>
