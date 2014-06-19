@@ -21,7 +21,12 @@
   </div>
   <div class="field">
     <%= f.label :quarterly_budget_id %><br>
-    <%= f.select(:quarterly_budget_id, @quarterly_budgets) %>
+    <% if @quarterly_budget %>
+      <%= f.hidden_field :quarterly_budget_id, :value => @quarterly_budget.id %>
+      <%= @quarterly_budget.quarteryear %>
+    <% else %>
+      <%= f.select(:quarterly_budget_id, @quarterly_budgets) %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :purchase_date %><br>

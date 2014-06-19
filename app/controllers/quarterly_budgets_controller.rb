@@ -10,6 +10,7 @@ class QuarterlyBudgetsController < ApplicationController
   # GET /quarterly_budgets/1
   # GET /quarterly_budgets/1.json
   def show
+    load_arrays_for_create
   end
 
   # GET /quarterly_budgets/new
@@ -62,6 +63,10 @@ class QuarterlyBudgetsController < ApplicationController
   end
 
   private
+    def load_arrays_for_create
+      @expenditures = @quarterly_budget.expenditures
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_quarterly_budget
       @quarterly_budget = QuarterlyBudget.find(params[:id])

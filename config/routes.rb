@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :expenditures
 
-  resources :quarterly_budgets
+  resources :quarterly_budgets do
+    resources :expenditures
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
