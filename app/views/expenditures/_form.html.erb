@@ -23,7 +23,7 @@
     <%= f.label :quarterly_budget_id %><br>
     <% if @quarterly_budget %>
       <%= f.hidden_field :quarterly_budget_id, :value => @quarterly_budget.id %>
-      <%= @quarterly_budget.quarteryear %>
+      <%= @quarterly_budget.to_s %>
     <% else %>
       <%= f.select(:quarterly_budget_id, @quarterly_budgets) %>
     <% end %>

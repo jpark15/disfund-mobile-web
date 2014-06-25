@@ -12,7 +12,7 @@
   <tbody>
     <% @quarterly_budgets.each do |quarterly_budget| %>
       <tr>
-        <td><%= quarterly_budget.quarteryear %></td>
+        <td><%= quarterly_budget.to_s %></td>
         <td><%= number_to_currency(quarterly_budget.start_balance.to_f) %></td>
         <td><%= number_to_currency(quarterly_budget.end_balance.to_f) %></td>
         <td><%= link_to 'Show', quarterly_budget %></td>
