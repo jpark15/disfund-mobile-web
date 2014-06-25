@@ -1,7 +1,7 @@
 class QuarterlyBudget < ActiveRecord::Base
   
   has_many :expenditures
-
+ 
   validates_associated :expenditures
 
   validates :start_balance, numericality: true, presence: true
@@ -13,7 +13,7 @@ class QuarterlyBudget < ActiveRecord::Base
   validates :quarter, numericality: { only_integer: true }, presence: true
   validates :year, numericality: { only_integer: true }, presence: true
 
-  def quarteryear
+  def to_s
     "#{year}-Q#{quarter}"
   end
 

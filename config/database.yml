@@ -3,4 +3,11 @@ development:
   database: discretionary_funding_development
   username: root
   password: 
+
+test:
+  adapter: mysql2
+  database: discretionary_funding_test
+  username: root
+  password: 
+  host: 127.0.0.1
   

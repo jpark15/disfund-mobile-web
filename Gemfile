@@ -15,7 +15,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 group :test do
+  gem "factory_girl_rails", "~> 4.0"
   gem 'capybara'
+  gem 'launchy'
 end
 
 group :development, :test do

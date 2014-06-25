@@ -14934,246 +14934,262 @@ Started GET "/assets/settings_types.js?body=1" for 127.0.0.1 at 2014-06-19 16:01
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-19 16:01:51 -0400
 
 
-Started GET "/" for 127.0.0.1 at 2014-06-24 16:19:31 -0400
-  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
-Processing by Rails::WelcomeController#index as HTML
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/railties-4.1.1/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
-Completed 200 OK in 29ms (Views: 21.0ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/quarterly_budgets" for 127.0.0.1 at 2014-06-24 16:19:37 -0400
+Started GET "/quarterly_budgets" for 127.0.0.1 at 2014-06-25 13:10:34 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
 Processing by QuarterlyBudgetsController#index as HTML
-  [1m[35mQuarterlyBudget Load (0.2ms)[0m  SELECT `quarterly_budgets`.* FROM `quarterly_budgets`
-  Rendered quarterly_budgets/index.html.erb within layouts/application (95.6ms)
-Completed 200 OK in 266ms (Views: 209.9ms | ActiveRecord: 17.3ms)
+  [1m[35mQuarterlyBudget Load (0.4ms)[0m  SELECT `quarterly_budgets`.* FROM `quarterly_budgets`
+  Rendered quarterly_budgets/index.html.erb within layouts/application (44.2ms)
+Completed 500 Internal Server Error in 111ms
+
+ActionView::Template::Error (undefined method `quarteryear' for #<QuarterlyBudget:0x007fb8ac7717c8>):
+    12:   <tbody>
+    13:     <% @quarterly_budgets.each do |quarterly_budget| %>
+    14:       <tr>
+    15:         <td><%= quarterly_budget.quarteryear %></td>
+    16:         <td><%= number_to_currency(quarterly_budget.start_balance.to_f) %></td>
+    17:         <td><%= number_to_currency(quarterly_budget.end_balance.to_f) %></td>
+    18:         <td><%= link_to 'Show', quarterly_budget %></td>
+  app/views/quarterly_budgets/index.html.erb:15:in `block in _app_views_quarterly_budgets_index_html_erb__4019666256660144327_70215572030120'
+  app/views/quarterly_budgets/index.html.erb:13:in `_app_views_quarterly_budgets_index_html_erb__4019666256660144327_70215572030120'
 
 
-Started GET "/quarterly_budgets" for 127.0.0.1 at 2014-06-24 16:19:37 -0400
+  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.1ms)
+
+
+Started GET "/quarterly_budgets" for 127.0.0.1 at 2014-06-25 13:10:43 -0400
 Processing by QuarterlyBudgetsController#index as HTML
   [1m[36mQuarterlyBudget Load (0.2ms)[0m  [1mSELECT `quarterly_budgets`.* FROM `quarterly_budgets`[0m
-  Rendered quarterly_budgets/index.html.erb within layouts/application (4.6ms)
-Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.2ms)
+  Rendered quarterly_budgets/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (undefined method `quarteryear' for #<QuarterlyBudget:0x007fb8ac55bb28>):
+    12:   <tbody>
+    13:     <% @quarterly_budgets.each do |quarterly_budget| %>
+    14:       <tr>
+    15:         <td><%= quarterly_budget.quarteryear %></td>
+    16:         <td><%= number_to_currency(quarterly_budget.start_balance.to_f) %></td>
+    17:         <td><%= number_to_currency(quarterly_budget.end_balance.to_f) %></td>
+    18:         <td><%= link_to 'Show', quarterly_budget %></td>
+  app/views/quarterly_budgets/index.html.erb:15:in `block in _app_views_quarterly_budgets_index_html_erb__4019666256660144327_70215572030120'
+  app/views/quarterly_budgets/index.html.erb:13:in `_app_views_quarterly_budgets_index_html_erb__4019666256660144327_70215572030120'
 
 
-Started GET "/assets/expenditures.css?body=1" for 127.0.0.1 at 2014-06-24 16:19:37 -0400
-
-
-Started GET "/assets/quarterly_budgets.css?body=1" for 127.0.0.1 at 2014-06-24 16:19:37 -0400
-
-
-Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-24 16:19:37 -0400
-
-
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-24 16:19:37 -0400
-
-
-Started GET "/assets/settings_types.css?body=1" for 127.0.0.1 at 2014-06-24 16:19:37 -0400
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-24 16:19:37 -0400
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-24 16:19:37 -0400
-
-
-Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-24 16:19:37 -0400
-
-
-Started GET "/assets/expenditures.js?body=1" for 127.0.0.1 at 2014-06-24 16:19:37 -0400
-
-
-Started GET "/assets/quarterly_budgets.js?body=1" for 127.0.0.1 at 2014-06-24 16:19:37 -0400
-
-
-Started GET "/assets/settings_types.js?body=1" for 127.0.0.1 at 2014-06-24 16:19:37 -0400
-
-
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-24 16:19:37 -0400
-
-
-Started GET "/quarterly_budgets/1" for 127.0.0.1 at 2014-06-24 16:19:40 -0400
-Processing by QuarterlyBudgetsController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[35mQuarterlyBudget Load (0.2ms)[0m  SELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 1 LIMIT 1
-Completed 500 Internal Server Error in 45ms
-
-ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
-  app/models/expenditure.rb:16:in `<class:Expenditure>'
-  app/models/expenditure.rb:1:in `<top (required)>'
-  app/controllers/quarterly_budgets_controller.rb:67:in `load_arrays_for_create'
-  app/controllers/quarterly_budgets_controller.rb:13:in `show'
-
-
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.9ms)
-
-
-Started GET "/quarterly_budgets/1" for 127.0.0.1 at 2014-06-24 16:19:40 -0400
-Processing by QuarterlyBudgetsController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mQuarterlyBudget Load (0.2ms)[0m  [1mSELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 1 LIMIT 1[0m
-Completed 500 Internal Server Error in 5ms
-
-ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
-  app/models/expenditure.rb:16:in `<class:Expenditure>'
-  app/models/expenditure.rb:1:in `<top (required)>'
-  app/controllers/quarterly_budgets_controller.rb:67:in `load_arrays_for_create'
-  app/controllers/quarterly_budgets_controller.rb:13:in `show'
-
-
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (29.1ms)
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (41.8ms)
-
-
-Started GET "/quarterly_budgets/1" for 127.0.0.1 at 2014-06-24 16:20:24 -0400
-Processing by QuarterlyBudgetsController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[35mQuarterlyBudget Load (4.2ms)[0m  SELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 1 LIMIT 1
-  [1m[36mExpenditure Load (0.4ms)[0m  [1mSELECT `expenditures`.* FROM `expenditures`  WHERE `expenditures`.`quarterly_budget_id` = 1[0m
-  [1m[35mSettingsType Load (0.6ms)[0m  SELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 1 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 1 LIMIT 1[0m  [["id", 1]]
-  [1m[35mCACHE (0.0ms)[0m  SELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 1 LIMIT 1  [["id", 1]]
-  Rendered quarterly_budgets/show.html.erb within layouts/application (25.8ms)
-Completed 200 OK in 86ms (Views: 29.3ms | ActiveRecord: 9.4ms)
-
-
-Started GET "/assets/expenditures.css?body=1" for 127.0.0.1 at 2014-06-24 16:20:24 -0400
-
-
-Started GET "/assets/settings_types.css?body=1" for 127.0.0.1 at 2014-06-24 16:20:24 -0400
-
-
-Started GET "/assets/quarterly_budgets.css?body=1" for 127.0.0.1 at 2014-06-24 16:20:24 -0400
-
-
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-24 16:20:24 -0400
-
-
-Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-24 16:20:24 -0400
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-24 16:20:24 -0400
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-24 16:20:24 -0400
-
-
-Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-24 16:20:24 -0400
-
-
-Started GET "/assets/expenditures.js?body=1" for 127.0.0.1 at 2014-06-24 16:20:24 -0400
-
-
-Started GET "/assets/quarterly_budgets.js?body=1" for 127.0.0.1 at 2014-06-24 16:20:24 -0400
-
-
-Started GET "/assets/settings_types.js?body=1" for 127.0.0.1 at 2014-06-24 16:20:24 -0400
-
-
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-24 16:20:24 -0400
-
-
-Started GET "/quarterly_budgets/1/expenditures/new" for 127.0.0.1 at 2014-06-24 16:20:26 -0400
-Processing by ExpendituresController#new as HTML
-  Parameters: {"quarterly_budget_id"=>"1"}
-  [1m[36mQuarterlyBudget Load (0.2ms)[0m  [1mSELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 1 LIMIT 1[0m
-  [1m[35mQuarterlyBudget Load (0.2ms)[0m  SELECT `quarterly_budgets`.* FROM `quarterly_budgets`
-  [1m[36mSettingsType Load (0.1ms)[0m  [1mSELECT `settings_types`.* FROM `settings_types`[0m
-  Rendered expenditures/_form.html.erb (27.5ms)
-  Rendered expenditures/new.html.erb within layouts/application (39.9ms)
-Completed 200 OK in 88ms (Views: 46.2ms | ActiveRecord: 0.5ms)
-
-
-Started POST "/expenditures" for 127.0.0.1 at 2014-06-24 16:20:28 -0400
-Processing by ExpendituresController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7yr7t1smsHeOv/iBkJlVa0JQkHh1dzvtE5OQbJTFuhQ=", "expenditure"=>{"item"=>"", "cost"=>"", "quarterly_budget_id"=>"1", "purchase_date(1i)"=>"2014", "purchase_date(2i)"=>"6", "purchase_date(3i)"=>"24", "type_id"=>"1", "notes"=>"", "refunded"=>"0"}, "commit"=>"Create New Type"}
-  [1m[35m (0.1ms)[0m  BEGIN
-  [1m[36mQuarterlyBudget Load (0.3ms)[0m  [1mSELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 1 LIMIT 1[0m
-  [1m[35m (0.2ms)[0m  ROLLBACK
-Completed 500 Internal Server Error in 7ms
-
-NoMethodError (undefined method `field_name' for #<Expenditure:0x007fd1c7a230c8>):
-  app/controllers/expenditures_controller.rb:35:in `block in create'
-  app/controllers/expenditures_controller.rb:34:in `create'
-
-
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
   Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.3ms)
+  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.4ms)
 
 
-Started POST "/expenditures" for 127.0.0.1 at 2014-06-24 16:20:48 -0400
-Processing by ExpendituresController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7yr7t1smsHeOv/iBkJlVa0JQkHh1dzvtE5OQbJTFuhQ=", "expenditure"=>{"item"=>"", "cost"=>"", "quarterly_budget_id"=>"1", "purchase_date(1i)"=>"2014", "purchase_date(2i)"=>"6", "purchase_date(3i)"=>"24", "type_id"=>"1", "notes"=>"", "refunded"=>"0"}, "commit"=>"Create New Type"}
-  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
-  [1m[35mQuarterlyBudget Load (0.5ms)[0m  SELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 1 LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
-Completed 500 Internal Server Error in 6ms
-
-NoMethodError (undefined method `field_name' for #<Expenditure:0x007fd1c450df50>):
-  app/controllers/expenditures_controller.rb:35:in `block in create'
-  app/controllers/expenditures_controller.rb:34:in `create'
-
-
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.2ms)
-
-
-Started GET "/quarterly_budgets/1" for 127.0.0.1 at 2014-06-24 16:20:51 -0400
-Processing by QuarterlyBudgetsController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[35mQuarterlyBudget Load (0.3ms)[0m  SELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 1 LIMIT 1
-  [1m[36mExpenditure Load (0.3ms)[0m  [1mSELECT `expenditures`.* FROM `expenditures`  WHERE `expenditures`.`quarterly_budget_id` = 1[0m
-  [1m[35mSettingsType Load (0.2ms)[0m  SELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 1 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 1 LIMIT 1[0m  [["id", 1]]
-  [1m[35mCACHE (0.0ms)[0m  SELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 1 LIMIT 1  [["id", 1]]
-  Rendered quarterly_budgets/show.html.erb within layouts/application (6.3ms)
-Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 0.8ms)
-
-
-Started GET "/quarterly_budgets" for 127.0.0.1 at 2014-06-24 16:20:53 -0400
+Started GET "/quarterly_budgets" for 127.0.0.1 at 2014-06-25 13:12:20 -0400
 Processing by QuarterlyBudgetsController#index as HTML
-  [1m[36mQuarterlyBudget Load (0.2ms)[0m  [1mSELECT `quarterly_budgets`.* FROM `quarterly_budgets`[0m
-  Rendered quarterly_budgets/index.html.erb within layouts/application (5.9ms)
-Completed 200 OK in 44ms (Views: 43.2ms | ActiveRecord: 0.2ms)
+  [1m[35mQuarterlyBudget Load (0.2ms)[0m  SELECT `quarterly_budgets`.* FROM `quarterly_budgets`
+  Rendered quarterly_budgets/index.html.erb within layouts/application (79.2ms)
+Completed 200 OK in 138ms (Views: 136.8ms | ActiveRecord: 0.2ms)
 
 
-Started GET "/reports" for 127.0.0.1 at 2014-06-25 09:25:54 -0400
-
-ActionController::RoutingError (No route matches [GET] "/reports"):
-  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
-  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
-  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
-  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
-  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
-  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
-  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
-  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
-  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
-  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
-  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
-  rack (1.5.2) lib/rack/lock.rb:17:in `call'
-  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
-  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
-  railties (4.1.1) lib/rails/engine.rb:514:in `call'
-  railties (4.1.1) lib/rails/application.rb:144:in `call'
-  rack (1.5.2) lib/rack/lock.rb:17:in `call'
-  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
-  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
-  /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
-  /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
-  /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+Started GET "/assets/quarterly_budgets.css?body=1" for 127.0.0.1 at 2014-06-25 13:12:20 -0400
 
 
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.9ms)
-  Rendered /Users/James/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (38.4ms)
+Started GET "/assets/expenditures.css?body=1" for 127.0.0.1 at 2014-06-25 13:12:20 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-25 13:12:20 -0400
+
+
+Started GET "/assets/settings_types.css?body=1" for 127.0.0.1 at 2014-06-25 13:12:20 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-25 13:12:20 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-25 13:12:20 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-25 13:12:20 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-25 13:12:20 -0400
+
+
+Started GET "/assets/expenditures.js?body=1" for 127.0.0.1 at 2014-06-25 13:12:20 -0400
+
+
+Started GET "/assets/quarterly_budgets.js?body=1" for 127.0.0.1 at 2014-06-25 13:12:20 -0400
+
+
+Started GET "/assets/settings_types.js?body=1" for 127.0.0.1 at 2014-06-25 13:12:20 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-25 13:12:20 -0400
+
+
+Started GET "/quarterly_budgets/new" for 127.0.0.1 at 2014-06-25 13:12:35 -0400
+Processing by QuarterlyBudgetsController#new as HTML
+  Rendered quarterly_budgets/_form.html.erb (25.6ms)
+  Rendered quarterly_budgets/new.html.erb within layouts/application (62.3ms)
+Completed 200 OK in 70ms (Views: 69.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/expenditures/new" for 127.0.0.1 at 2014-06-25 13:12:49 -0400
+Processing by ExpendituresController#new as HTML
+  [1m[36mQuarterlyBudget Load (0.3ms)[0m  [1mSELECT `quarterly_budgets`.* FROM `quarterly_budgets`[0m
+  [1m[35mSettingsType Load (0.3ms)[0m  SELECT `settings_types`.* FROM `settings_types`
+  Rendered expenditures/_form.html.erb (15.4ms)
+  Rendered expenditures/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 39ms (Views: 22.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/expenditures.css?body=1" for 127.0.0.1 at 2014-06-25 13:12:49 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-25 13:12:49 -0400
+
+
+Started GET "/assets/quarterly_budgets.css?body=1" for 127.0.0.1 at 2014-06-25 13:12:49 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-25 13:12:49 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-25 13:12:49 -0400
+
+
+Started GET "/assets/settings_types.css?body=1" for 127.0.0.1 at 2014-06-25 13:12:49 -0400
+
+
+Started GET "/assets/expenditures.js?body=1" for 127.0.0.1 at 2014-06-25 13:12:49 -0400
+
+
+Started GET "/assets/quarterly_budgets.js?body=1" for 127.0.0.1 at 2014-06-25 13:12:49 -0400
+
+
+Started GET "/assets/settings_types.js?body=1" for 127.0.0.1 at 2014-06-25 13:12:49 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-25 13:12:49 -0400
+
+
+Started GET "/expenditures" for 127.0.0.1 at 2014-06-25 13:31:49 -0400
+Processing by ExpendituresController#index as HTML
+  [1m[36mExpenditure Load (0.3ms)[0m  [1mSELECT `expenditures`.* FROM `expenditures`[0m
+  [1m[35mQuarterlyBudget Load (0.2ms)[0m  SELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 1 LIMIT 1
+  [1m[36mSettingsType Load (0.1ms)[0m  [1mSELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuarterlyBudget Load (0.1ms)[0m  SELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 2 LIMIT 1
+  [1m[36mSettingsType Load (0.1ms)[0m  [1mSELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered expenditures/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/expenditures" for 127.0.0.1 at 2014-06-25 13:31:49 -0400
+Processing by ExpendituresController#index as HTML
+  [1m[35mExpenditure Load (0.3ms)[0m  SELECT `expenditures`.* FROM `expenditures`
+  [1m[36mQuarterlyBudget Load (0.2ms)[0m  [1mSELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 1 LIMIT 1[0m
+  [1m[35mSettingsType Load (0.2ms)[0m  SELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mQuarterlyBudget Load (0.3ms)[0m  [1mSELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 2 LIMIT 1[0m
+  [1m[35mSettingsType Load (0.2ms)[0m  SELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered expenditures/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/expenditures.css?body=1" for 127.0.0.1 at 2014-06-25 13:31:49 -0400
+
+
+Started GET "/assets/quarterly_budgets.css?body=1" for 127.0.0.1 at 2014-06-25 13:31:49 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-25 13:31:49 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-25 13:31:49 -0400
+
+
+Started GET "/assets/settings_types.css?body=1" for 127.0.0.1 at 2014-06-25 13:31:49 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-25 13:31:49 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-25 13:31:49 -0400
+
+
+Started GET "/assets/expenditures.js?body=1" for 127.0.0.1 at 2014-06-25 13:31:49 -0400
+
+
+Started GET "/assets/quarterly_budgets.js?body=1" for 127.0.0.1 at 2014-06-25 13:31:49 -0400
+
+
+Started GET "/assets/settings_types.js?body=1" for 127.0.0.1 at 2014-06-25 13:31:49 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-25 13:31:49 -0400
+  [1m[36m (67.7ms)[0m  [1mDROP DATABASE IF EXISTS `discretionary_funding_test`[0m
+  [1m[35m (0.8ms)[0m  CREATE DATABASE `discretionary_funding_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (121.1ms)[0m  [1mCREATE TABLE `expenditures` (`id` int(11) auto_increment PRIMARY KEY, `item` varchar(255), `cost` decimal(8,2), `quarterly_budget_id` int(11), `purchase_date` date, `type_id` int(11), `notes` varchar(255), `refunded` tinyint(1) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (196.5ms)[0m  CREATE TABLE `quarterly_budgets` (`id` int(11) auto_increment PRIMARY KEY, `start_balance` decimal(8,2), `current_balance` decimal(8,2), `end_balance` decimal(8,2), `quarter` int(11), `year` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (133.9ms)[0m  [1mCREATE TABLE `settings_types` (`id` int(11) auto_increment PRIMARY KEY, `description` varchar(255), `internal_symbol` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (119.6ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (130.2ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.6ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140612184706')[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140612174545')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140612183928')[0m
+
+
+Started GET "/expenditures" for 127.0.0.1 at 2014-06-25 14:18:52 -0400
+Processing by ExpendituresController#index as HTML
+  [1m[36mExpenditure Load (0.2ms)[0m  [1mSELECT `expenditures`.* FROM `expenditures`[0m
+  [1m[35mQuarterlyBudget Load (0.2ms)[0m  SELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 1 LIMIT 1
+  [1m[36mSettingsType Load (0.2ms)[0m  [1mSELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuarterlyBudget Load (0.2ms)[0m  SELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 2 LIMIT 1
+  [1m[36mSettingsType Load (0.1ms)[0m  [1mSELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered expenditures/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/expenditures.css?body=1" for 127.0.0.1 at 2014-06-25 14:18:52 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-25 14:18:52 -0400
+
+
+Started GET "/assets/settings_types.css?body=1" for 127.0.0.1 at 2014-06-25 14:18:52 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-25 14:18:52 -0400
+
+
+Started GET "/assets/quarterly_budgets.css?body=1" for 127.0.0.1 at 2014-06-25 14:18:52 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-25 14:18:52 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-25 14:18:52 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-25 14:18:52 -0400
+
+
+Started GET "/assets/expenditures.js?body=1" for 127.0.0.1 at 2014-06-25 14:18:52 -0400
+
+
+Started GET "/assets/quarterly_budgets.js?body=1" for 127.0.0.1 at 2014-06-25 14:18:52 -0400
+
+
+Started GET "/assets/settings_types.js?body=1" for 127.0.0.1 at 2014-06-25 14:18:52 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-25 14:18:52 -0400

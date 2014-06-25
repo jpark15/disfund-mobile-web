@@ -1,6 +1,6 @@
 <h1>Listing All Expenditures</h1>
 
-<table>
+<table id="table1">
   <thead>
     <tr>
       <th>Year-Q#</th>
@@ -17,7 +17,7 @@
   <tbody>
     <% @expenditures.each do |expenditure| %>
       <tr>
-        <td><%= QuarterlyBudget.find(expenditure.quarterly_budget_id).quarteryear %></td>
+        <td><%= QuarterlyBudget.find(expenditure.quarterly_budget_id).to_s %></td>
         <td><%= expenditure.purchase_date %></td>
         <td><%= number_to_currency(expenditure.cost.to_f) %></td>
         <td><%= expenditure.item %></td>
