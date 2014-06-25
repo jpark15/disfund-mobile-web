@@ -67,10 +67,10 @@ class ExpendituresController < ApplicationController
   end
 
   private
-    def load_arrays_for_create
-      @quarterly_budgets = QuarterlyBudget.all.map{|budget| [budget.quarteryear, budget.id]}
-      @types = SettingsType.all.map{|type| [type.description, type.id]}
-    end
+  def load_arrays_for_create
+    @quarterly_budgets = QuarterlyBudget.all.map{|budget| [budget, budget.id]}
+    @types = SettingsType.all.map{|type| [type.description, type.id]}
+  end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_expenditure

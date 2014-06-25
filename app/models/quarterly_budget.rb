@@ -1,7 +1,7 @@
 class QuarterlyBudget < ActiveRecord::Base
   has_many :expenditures
 
-  def quarteryear
+  def to_s
     "#{year}-Q#{quarter}"
   end
 
