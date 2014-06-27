@@ -1,9 +1,12 @@
 <h1>Expenditure Type</h1>
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>Description:</strong>
-  <%= @settings_type.description %>
-</p>
+
+  <div class="attributes">
+    <fieldset>
+      <dl class="inline">
+        <dt><label><%= 'Description:' %></label></dt><dd><%= @settings_type.description %></dd>
+      </dl>
+    </fieldset>
+  </div>
 
 <%= link_to 'Edit', edit_settings_type_path(@settings_type) %> |
 <%= link_to 'Back', settings_types_path %>

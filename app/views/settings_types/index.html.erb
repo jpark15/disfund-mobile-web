@@ -1,5 +1,6 @@
 <h1>Listing All Expenditure Types</h1>
-<table>
+
+<table id="table1">
   <thead>
     <tr>
       <th>Description</th>
@@ -9,12 +10,12 @@
 
   <tbody>
     <% @settings_types.each do |settings_type| %>
-      <tr>
+      <%= content_tag_for(:tr, settings_type) do %>
         <td><%= settings_type.description %></td>
         <td><%= link_to 'Show', settings_type %></td>
         <td><%= link_to 'Edit', edit_settings_type_path(settings_type) %></td>
         <td><%= link_to 'Destroy', settings_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

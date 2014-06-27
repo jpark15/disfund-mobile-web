@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-describe "Expenditures" do
+describe "QuarterlyBudgets" do
 
-  subject!(:expenditure) { FactoryGirl.create(:expenditure) }
+  subject!(:quarterly_budget) { FactoryGirl.create(:quarterly_budget, quarter: 2) }
 
-  let(:index_path) { polymorphic_path([:expenditures]) }
-  let(:show_path) { polymorphic_path([expenditure]) }
+  let(:index_path) { polymorphic_path([:quarterly_budgets]) }
+  let(:show_path) { polymorphic_path([quarterly_budget]) }
 
   describe "index" do
     before { visit index_path }
 
-    it "should have title 'Listing All Expenditures'" do
-      expect(page).to have_content('Listing All Expenditures')
+    it "should have title 'Listing All Quarterly Budgets'" do
+      expect(page).to have_content('Listing All Quarterly Budgets')
     end
 
     it "should have the correct headers" do
@@ -19,12 +19,8 @@ describe "Expenditures" do
         within('thead') do
           headers = [
             'Year-Q#',
-            'Purchase Date',
-            'Cost',
-            'Item',
-            'Type',
-            'Notes',
-            'Refunded',
+            'Starting Balance',
+            'Ending Balance',
             'Links']
           headers.each do |header|
             expect(find(:header_at_index, headers.index(header)+1)).to have_content(header)
@@ -35,15 +31,11 @@ describe "Expenditures" do
 
     it "should have the correct values under each header" do
       within_table('table1') do
-        within(:row_for, expenditure) do
+        within(:row_for, quarterly_budget) do
           head_val_hash = {
             'Year-Q#' => '2014-Q2',
-            'Purchase Date' => '1993-10-07',
-            'Cost' => '$0.00',
-            'Item' => 'Default Item',
-            'Type' => 'Default Value',
-            'Notes' => 'Default Notes',
-            'Refunded' => 'False'}
+            'Starting Balance' => '$500.00',
+            'Ending Balance' => '$250.00'}
           head_val_hash.each do |header, value|
             expect(find(:value_under_header, header)).to have_content(value)
           end
@@ -58,13 +50,11 @@ describe "Expenditures" do
     it 'shows the correct headers in order' do
       within('.inline') do
         labels = [
-          'Quarterly Budget:',
-          'Purchase Date:',
-          'Item:',
-          'Type:',
-          'Cost:',
-          'Notes:',
-          'Refunded:']
+          'Year:',
+          'Quarter:',
+          'Start Balance',
+          'Current Balance',
+          'End Balance']
         labels.each do |label|
           expect(find(:label_at_index, labels.index(label)+1)).to have_content(label)
         end
@@ -74,13 +64,11 @@ describe "Expenditures" do
     it 'contains all column specific values in row' do
       within('.inline') do
         lab_val_hash = {
-          'Quarterly Budget:' => expenditure.quarterly_budget_id,
-          'Purchase Date:' => '1993-10-07',
-          'Item:' => 'Default Item',
-          'Type:' => 'Default Value',
-          'Cost:' => '$0.00',
-          'Notes:' => 'Default Notes',
-          'Refunded:' => 'False'}
+          'Year:' => '2014',
+          'Quarter:' => '2',
+          'Start Balance:' => '$500.00',
+          'Current Balance:' => '$250.00',
+          'End Balance:' => '$250.00'}
         lab_val_hash.each do |label, value|
           expect(find(:dd_for_label, label)).to have_content(value)
         end

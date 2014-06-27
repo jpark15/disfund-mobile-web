@@ -1,7 +1,7 @@
 class Expenditure < ActiveRecord::Base
   
   belongs_to :quarterly_budget
-  belongs_to :settings_type
+  belongs_to :settings_type, :class_name => "SettingsType", :foreign_key => "type_id"
 
   validates :quarterly_budget, presence: true
   validates :settings_type, presence: true
@@ -12,6 +12,6 @@ class Expenditure < ActiveRecord::Base
   validates :purchase_date, presence: true
   validates :type_id, numericality: { only_integer: true }, presence: true
   # Do not need to validate :notes since it should be optional
-  validates :field_name, inclusion: { in: [true, false] }
+  validates :refunded, inclusion: { in: [true, false] }
 
 end

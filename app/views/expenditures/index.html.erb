@@ -16,7 +16,7 @@
 
   <tbody>
     <% @expenditures.each do |expenditure| %>
-      <tr>
+      <%= content_tag_for(:tr, expenditure) do %>
         <td><%= QuarterlyBudget.find(expenditure.quarterly_budget_id).to_s %></td>
         <td><%= expenditure.purchase_date %></td>
         <td><%= number_to_currency(expenditure.cost.to_f) %></td>
@@ -27,7 +27,7 @@
         <td><%= link_to 'Show', expenditure %></td>
         <td><%= link_to 'Edit', edit_expenditure_path(expenditure) %></td>
         <td><%= link_to 'Destroy', expenditure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
