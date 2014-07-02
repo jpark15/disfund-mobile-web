@@ -17,7 +17,35 @@
 
 @import "bootstrap";
 
-.navbar-inner {
-  background: none;
-  background-color: #2d3538;
+.table-striped tbody tr td a:hover {
+  text-decoration: none;
+}
+
+.table-striped tbody tr:nth-child(odd) td a:hover {
+  background-color: #d0e0f0;
+}
+
+.table-striped tbody tr:nth-child(even) td a:hover {
+  background-color: #A8A8A8 ;
+}
+
+.table-striped tbody tr:nth-child(odd) td {
+  background-color: #5E9ACA;
+}
+
+.table-striped tbody tr td {
+  color: #303030;
+}
+
+.table-striped tbody tr td a {
+  color: #303030;
+}
+
+.navbar-default .navbar-nav li a {
+  color: white;
+}
+
+.navbar {
+  background-image: -webkit-linear-gradient(top, #5E9ACA, #3B6F92);
+  background-image: -moz-linear-gradient(#5E9ACA, #3B6F92);
 }
