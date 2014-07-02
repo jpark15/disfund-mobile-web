@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  get 'static_pages/about'
+  get 'static_pages/contact'
+  get 'static_pages/home'
+
   resources :settings_types
-
   resources :expenditures
-
   resources :quarterly_budgets do
     resources :expenditures
   end

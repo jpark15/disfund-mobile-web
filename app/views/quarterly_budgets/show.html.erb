@@ -3,10 +3,10 @@
   <div class="attributes">
     <fieldset>
       <dl class="inline">
-        <dt><label><%= 'Year:' %></label></dt><dd><%= @quarterly_budget.year %></dd>
-        <dt><label><%= 'Quarter:' %></label></dt><dd><%= @quarterly_budget.quarter %></dd>
-        <dt><label><%= 'Start Balance:' %></label></dt><dd><%= number_to_currency @quarterly_budget.start_balance.to_f %></dd>
-        <dt><label><%= 'Current Balance:' %></label></dt><dd><%= number_to_currency @quarterly_budget.current_balance.to_f %></dd>
+        <dt><label><%= 'Year:' %></label></dt><dd><%= @quarterly_budget.year %></dd><br>
+        <dt><label><%= 'Quarter:' %></label></dt><dd><%= @quarterly_budget.quarter %></dd><br>
+        <dt><label><%= 'Start Balance:' %></label></dt><dd><%= number_to_currency @quarterly_budget.start_balance.to_f %></dd><br>
+        <dt><label><%= 'Current Balance:' %></label></dt><dd><%= number_to_currency @quarterly_budget.current_balance.to_f %></dd><br>
         <dt><label><%= 'End Balance:' %></label></dt><dd><%= number_to_currency @quarterly_budget.end_balance.to_f %></dd>
       </dl>
     </fieldset>
@@ -18,7 +18,7 @@
 <br>
 
 <h2>Listing All Corresponding Expenditures</h1>
-<table>
+<table id="table1" class="table table-striped">
 
   <thead>
     <tr>
@@ -45,5 +45,4 @@
   </tbody>
 </table>
 
-<br>
 <%= link_to 'Create New Expenditure', new_quarterly_budget_expenditure_path(@quarterly_budget.id) %>

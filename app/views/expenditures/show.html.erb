@@ -3,12 +3,12 @@
   <div class="attributes">
     <fieldset>
       <dl class="inline">
-        <dt><label><%= 'Quarterly Budget:' %></label></dt><dd><%= @expenditure.quarterly_budget_id %></dd>
-        <dt><label><%= 'Purchase Date:' %></label></dt><dd><%= @expenditure.purchase_date %></dd>
-        <dt><label><%= 'Item:' %></label></dt><dd><%= @expenditure.item %></dd>
-        <dt><label><%= 'Type:' %></label></dt><dd><%= SettingsType.find(@expenditure.type_id).description %></dd>
-        <dt><label><%= 'Cost:' %></label></dt><dd><%= number_to_currency @expenditure.cost.to_f %></dd>
-        <dt><label><%= 'Notes:' %></label></dt><dd><%= @expenditure.notes %></dd>
+        <dt><label><%= 'Quarterly Budget:' %></label></dt><dd><%= @expenditure.quarterly_budget.to_s %></dd><br>
+        <dt><label><%= 'Purchase Date:' %></label></dt><dd><%= @expenditure.purchase_date %></dd><br>
+        <dt><label><%= 'Item:' %></label></dt><dd><%= @expenditure.item %></dd><br>
+        <dt><label><%= 'Type:' %></label></dt><dd><%= SettingsType.find(@expenditure.type_id).description %></dd><br>
+        <dt><label><%= 'Cost:' %></label></dt><dd><%= number_to_currency @expenditure.cost.to_f %></dd><br>
+        <dt><label><%= 'Notes:' %></label></dt><dd><%= @expenditure.notes %></dd><br>
         <dt><label><%= 'Refunded:' %></label></dt><dd><%= @expenditure.refunded.to_s.humanize %></dd>
       </dl>
     </fieldset>

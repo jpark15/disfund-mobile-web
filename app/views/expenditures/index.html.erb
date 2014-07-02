@@ -1,16 +1,16 @@
 <h1>Listing All Expenditures</h1>
 
-<table id="table1">
+<table id="table1" class="table table-striped">
   <thead>
     <tr>
-      <th>Year-Q#</th>
-      <th>Purchase Date</th>
-      <th>Cost</th>
-      <th>Item</th>
-      <th>Type</th>
-      <th>Notes</th>
-      <th>Refunded</th>
-      <th colspan="3">Links</th>
+      <th class="col-sm-1">Year-Q#</th>
+      <th class="col-sm-2">Purchase Date</th>
+      <th class="col-sm-1">Cost</th>
+      <th class="col-sm-1">Item</th>
+      <th class="col-sm-1">Type</th>
+      <th class="col-sm-4">Notes</th>
+      <th class="col-sm-1">Refunded</th>
+      <th class="col-sm-1" colspan="3">Links</th>
     </tr>
   </thead>
 
@@ -31,7 +31,5 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
 
 <%= link_to 'Create New Expenditure', new_expenditure_path %>

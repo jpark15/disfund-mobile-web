@@ -1,12 +1,12 @@
 <h1>Listing All Quarterly Budgets</h1>
 
-<table id="table1">
+<table id="table1" class="table table-striped">
   <thead>
     <tr>
-      <th>Year-Q#</th>
-      <th>Starting Balance</th>
-      <th>Ending Balance</th>
-      <th colspan="3">Links</th>
+      <th class="col-sm-3">Year-Q#</th>
+      <th class="col-sm-3">Starting Balance</th>
+      <th class="col-sm-3">Ending Balance</th>
+      <th class="col-sm-3" colspan="3">Links</th>
     </tr>
   </thead>
 
@@ -23,7 +23,5 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
 
 <%= link_to 'New Quarterly Budget', new_quarterly_budget_path %>
