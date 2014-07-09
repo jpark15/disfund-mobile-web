@@ -1,4 +1,5 @@
 class ExpendituresController < ApplicationController
+  before_filter :authenticate_user!, :except => [:show, :index]
   before_action :set_expenditure, only: [:show, :edit, :update, :destroy]
 
   # GET /expenditures

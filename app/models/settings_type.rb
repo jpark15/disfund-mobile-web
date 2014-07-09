@@ -1,10 +1,16 @@
 class SettingsType < ActiveRecord::Base
-  
-  has_many :expenditures
+  include ApplicationHelper
+
+  has_many :expenditures, :foreign_key => "type_id"
 
   validates_associated :expenditures
 
   validates :description, presence: true
-  # internal_symbol will be completed automatically
+  validates :internal_symbol, presence: true
 
+  before_validation :set_internal_symbol
+
+  def set_internal_symbol
+    self.internal_symbol = snakecase(description) unless description.nil?
+  end
 end

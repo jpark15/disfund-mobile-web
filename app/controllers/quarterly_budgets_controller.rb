@@ -1,4 +1,5 @@
 class QuarterlyBudgetsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:show, :index]
   before_action :set_quarterly_budget, only: [:show, :edit, :update, :destroy]
 
   # GET /quarterly_budgets

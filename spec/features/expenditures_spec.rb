@@ -74,7 +74,7 @@ describe "Expenditures" do
     it 'contains all column specific values in row' do
       within('.inline') do
         lab_val_hash = {
-          'Quarterly Budget:' => expenditure.quarterly_budget_id,
+          'Quarterly Budget:' => expenditure.quarterly_budget,
           'Purchase Date:' => '1993-10-07',
           'Item:' => 'Default Item',
           'Type:' => 'Default Value',

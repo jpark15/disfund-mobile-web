@@ -18,31 +18,45 @@
 @import "bootstrap";
 
 .table-striped tbody tr td a:hover {
-  text-decoration: none;
+  text-decoration: none; /* No Underline (Show, Edit, Destroy) */
 }
 
 .table-striped tbody tr:nth-child(odd) td a:hover {
-  background-color: #d0e0f0;
+  background-color: #d0e0f0; /* Highlight Links with Light Grey */
 }
 
 .table-striped tbody tr:nth-child(even) td a:hover {
-  background-color: #A8A8A8 ;
+  background-color: #A8A8A8 ; /* Highlight Links with Dark Grey */
 }
 
 .table-striped tbody tr:nth-child(odd) td {
-  background-color: #5E9ACA;
+  background-color: #5E9ACA; /* Color Row with Light Blue */
 }
 
-.table-striped tbody tr td {
-  color: #303030;
+.table-striped tbody tr td, .table-striped tbody tr td a {
+  color: #303030; /* Words in Table Colored Light Black */
 }
 
-.table-striped tbody tr td a {
-  color: #303030;
+.dropdown-menu .divider { /* Width of Divider in DropDown */
+  height: 2px;
+  margin: 0.5px 0px 0.5px 0px;
+}
+
+.dropdown-menu { /* DropDown Shadow */
+  padding: 0px 0px 0px 0px;
+  box-shadow: 0 2px 0 #555555, 0 2px 0 #666;
+}
+
+.navbar-default .navbar-nav .open a, .navbar-default .navbar-nav .open a:hover, .navbar-default .navbar-nav .open a:focus {
+  background-color: #B0CAE6; /* DropDown Color set to Light Blue */
+}
+
+.navbar-default .navbar-nav li a:hover {
+  color: #555555; /* Grey */
 }
 
 .navbar-default .navbar-nav li a {
-  color: white;
+  color: #FFFFFF; /* White */
 }
 
 .navbar {
