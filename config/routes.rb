@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :items
+
+  resources :votes
+
   devise_for :users
   
   resources :settings_types
