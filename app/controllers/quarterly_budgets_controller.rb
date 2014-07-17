@@ -75,6 +75,6 @@ class QuarterlyBudgetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quarterly_budget_params
-      params.require(:quarterly_budget).permit(:start_balance, :current_balance, :end_balance, :quarter, :year)
+      params.require(:quarterly_budget).permit(:start_balance, :quarter, :year)
     end
 end

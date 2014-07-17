@@ -15,10 +15,10 @@ class ExpendituresController < ApplicationController
 
   # GET /expenditures/new
   def new
+    load_arrays_for_create
     if params["quarterly_budget_id"]
       @quarterly_budget = QuarterlyBudget.find_by id: params["quarterly_budget_id"]
     end
-    load_arrays_for_create
     @expenditure = Expenditure.new
   end
 
@@ -30,6 +30,7 @@ class ExpendituresController < ApplicationController
   # POST /expenditures
   # POST /expenditures.json
   def create
+    load_arrays_for_create
     @expenditure = Expenditure.new(expenditure_params)
 
     respond_to do |format|
@@ -68,10 +69,10 @@ class ExpendituresController < ApplicationController
   end
 
   private
-  def load_arrays_for_create
-    @quarterly_budgets = QuarterlyBudget.all.map{|budget| [budget, budget.id]}
-    @types = SettingsType.all.map{|type| [type.description, type.id]}
-  end
+    def load_arrays_for_create
+      @quarterly_budgets = QuarterlyBudget.all.map{|budget| [budget, budget.id]}
+      @types = SettingsType.all.map{|type| [type.description, type.id]}
+    end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_expenditure
