@@ -5,10 +5,10 @@ class SettingsType < ActiveRecord::Base
 
   validates_associated :expenditures
 
-  validates :description, presence: true
-  validates :internal_symbol, presence: true
-
   before_validation :set_internal_symbol
+
+  validates :description, presence: true
+  validates :internal_symbol, presence: true, uniqueness: true
 
   def set_internal_symbol
     self.internal_symbol = snakecase(description) unless description.nil?

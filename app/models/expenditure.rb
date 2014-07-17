@@ -11,7 +11,6 @@ class Expenditure < ActiveRecord::Base
   validates :quarterly_budget_id, numericality: { only_integer: true }, presence: true
   validates :purchase_date, presence: true
   validates :type_id, numericality: { only_integer: true }, presence: true
-  # Do not need to validate :notes since it should be optional
   validates :refunded, inclusion: { in: [true, false] }
 
 end
