@@ -10,7 +10,7 @@
       <th class="col-sm-1">Type</th>
       <th class="col-sm-4">Notes</th>
       <th class="col-sm-1">Refunded</th>
-      <th class="col-sm-1" colspan="3">Links</th>
+      <th class="col-sm-1" colspan="2">Links</th>
     </tr>
   </thead>
 
@@ -18,18 +18,17 @@
     <% @expenditures.each do |expenditure| %>
       <%= content_tag_for(:tr, expenditure) do %>
         <td><%= QuarterlyBudget.find(expenditure.quarterly_budget_id).to_s %></td>
-        <td><%= expenditure.purchase_date %></td>
-        <td><%= number_to_currency(expenditure.cost.to_f) %></td>
+        <td><%= expenditure.purchase_date.strftime('%b %d, %y') %></td>
+        <td><%= number_to_currency expenditure.cost %></td>
         <td><%= expenditure.item %></td>
         <td><%= SettingsType.find(expenditure.type_id).description %></td>
         <td><%= expenditure.notes %></td>
         <td><%= expenditure.refunded.to_s.humanize %></td>
         <td><%= link_to 'Show', expenditure %></td>
-        <td><%= link_to 'Edit', edit_expenditure_path(expenditure) %></td>
-        <td><%= link_to 'Destroy', expenditure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_expenditure_path(expenditure), 'data-no-turbolink' => true %></td>
       <% end %>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Create New Expenditure', new_expenditure_path %>
+<%= link_to 'Create New Expenditure', new_expenditure_path, 'data-no-turbolink' => true %>

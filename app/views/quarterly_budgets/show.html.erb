@@ -1,13 +1,12 @@
 <h1>Quarterly Budget Details</h1>
-
   <div class="attributes">
     <fieldset>
       <dl class="inline">
         <dt><label><%= 'Year:' %></label></dt><dd><%= @quarterly_budget.year %></dd><br>
         <dt><label><%= 'Quarter:' %></label></dt><dd><%= @quarterly_budget.quarter %></dd><br>
-        <dt><label><%= 'Start Balance:' %></label></dt><dd><%= number_to_currency @quarterly_budget.start_balance.to_f %></dd><br>
-        <dt><label><%= 'Current Balance:' %></label></dt><dd><%= number_to_currency @quarterly_budget.current_balance.to_f %></dd><br>
-        <dt><label><%= 'End Balance:' %></label></dt><dd><%= number_to_currency @quarterly_budget.end_balance.to_f %></dd>
+        <dt><label><%= 'Start Balance:' %></label></dt><dd><%= number_to_currency @quarterly_budget.start_balance %></dd><br>
+        <dt><label><%= 'Current Balance:' %></label></dt><dd><%= number_to_currency @quarterly_budget.current_balance %></dd><br>
+        <dt><label><%= 'End Balance:' %></label></dt><dd><%= @quarterly_budget.end_balance_to_s %></dd>
       </dl>
     </fieldset>
   </div>
@@ -34,8 +33,8 @@
   <tbody>
     <% @expenditures.each do |expenditure| %>
       <tr>
-        <td><%= expenditure.purchase_date %></td>
-        <td><%= number_to_currency(expenditure.cost) %></td>
+        <td><%= expenditure.purchase_date.strftime('%b %d, %y') %></td>
+        <td><%= number_to_currency expenditure.cost %></td>
         <td><%= expenditure.item %></td>
         <td><%= SettingsType.find(expenditure.type_id).description %></td>
         <td><%= expenditure.notes %></td>
@@ -45,4 +44,4 @@
   </tbody>
 </table>
 
-<%= link_to 'Create New Expenditure', new_quarterly_budget_expenditure_path(@quarterly_budget.id) %>
+<%= link_to 'Create New Expenditure', new_quarterly_budget_expenditure_path(@quarterly_budget.id), 'data-no-turbolink' => true %>
