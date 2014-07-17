@@ -1,0 +1,40 @@
+<h1>Listing All Items</h1>
+
+<table id="table1" class="table table-striped">
+  <thead>
+    <tr>
+      <th class="col-sm-1">Name</th>
+      <th class="col-sm-4">Description</th>
+      <th class="col-sm-1">Type</th>
+      <th class="col-sm-1">Cost</th>
+      <th class="col-sm-1">Total Votes</th>
+      <th class="col-sm-1" colspan="1"></th>
+      <th class="col-sm-1">Links</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.description %></td>
+        <td><%= SettingsType.find(item.type_id).description %></td>
+        <td><%= number_to_currency item.cost %></td>
+        <td><%= item.vote_count %></td>
+        <% if current_user == nil %>
+          <td></td>
+        <% else %>
+          <% if item.has_vote_by_user(current_user.id) == nil %>
+            <td> <%= button_to 'Upvote', votes_path(vote: {user_id: current_user.id, item_id: item.id} ), class: "upvote-button-style" %> </td>
+          <% else %>
+            <% vote = Vote.find_by(user_id: current_user.id, item_id: item.id) %>
+            <td> <%= button_to 'Downvote', vote, method: :delete , class: "downvote-button-style" %> </td>
+          <% end %>
+        <% end %>
+        <td><%= link_to 'Show', item %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Create New Item', new_item_path %>

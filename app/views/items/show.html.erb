@@ -1,0 +1,15 @@
+<h1>Item Details</h1>
+
+<div class="attributes">
+    <fieldset>
+      <dl class="inline">
+        <dt><label><%= 'Name:' %></label></dt><dd><%= @item.name %></dd><br>
+        <dt><label><%= 'Description:' %></label></dt><dd><%= @item.description %></dd><br>
+        <dt><label><%= 'Type:' %></label></dt><dd><%= SettingsType.find(@item.type_id).description %></dd><br>
+        <dt><label><%= 'Cost:' %></label></dt><dd><%= number_to_currency @item.cost %></dd><br>
+      </dl>
+    </fieldset>
+  </div>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
