@@ -36,6 +36,8 @@ end
 # Deploy
 gem 'capistrano', '~> 2.15'
 
+gem 'net-ssh', '2.6.8'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
