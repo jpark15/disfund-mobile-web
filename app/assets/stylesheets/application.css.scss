@@ -17,6 +17,16 @@
 
 @import "bootstrap";
 
+.upvote-button-style {
+  border-color: green;
+  color: green;
+}
+
+.downvote-button-style {
+  border-color: red;
+  color: red;
+}
+
 .table-striped tbody tr td a:hover {
   text-decoration: none; /* No Underline (Show, Edit, Destroy) */
 }
