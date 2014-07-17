@@ -7,6 +7,9 @@ gem 'rails', '4.1.1'
 # Users
 gem 'devise'
 
+# Sortable columns
+gem "meta_search"
+
 # DATABASE
 gem 'mysql2', '~> 0.3.11'
 # Use SCSS for stylesheets
