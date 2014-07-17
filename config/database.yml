@@ -10,4 +10,9 @@ test:
   username: root
   password: 
   host: 127.0.0.1
-  
+
+production:
+  adapter: mysql2
+  database: discretionary_funding
+  username: discretionary
+  password: qWUzxH9M

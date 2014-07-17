@@ -33,6 +33,9 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+# Deploy
+gem 'capistrano', '~> 2.15'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'

@@ -3853,3 +3853,303 @@ Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms)
   [1m[35mSQL (0.2ms)[0m  INSERT INTO `settings_types` (`created_at`, `description`, `internal_symbol`, `updated_at`) VALUES ('2014-07-03 18:56:57', 'Test Case', 'test_case', '2014-07-03 18:56:57')
   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (7.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSettingsType Exists (0.3ms)[0m  SELECT  1 AS one FROM `settings_types`  WHERE `settings_types`.`internal_symbol` = BINARY 'default_value' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `settings_types` (`created_at`, `description`, `internal_symbol`, `updated_at`) VALUES ('2014-07-17 15:34:22', 'Default Value', 'default_value', '2014-07-17 15:34:22')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/settings_types" for 127.0.0.1 at 2014-07-17 11:34:22 -0400
+Processing by SettingsTypesController#index as HTML
+  [1m[36mSettingsType Load (0.3ms)[0m  [1mSELECT `settings_types`.* FROM `settings_types`[0m
+  Rendered settings_types/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 7435ms (Views: 7424.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSettingsType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `settings_types`  WHERE `settings_types`.`internal_symbol` = BINARY 'default_value' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `settings_types` (`created_at`, `description`, `internal_symbol`, `updated_at`) VALUES ('2014-07-17 15:34:30', 'Default Value', 'default_value', '2014-07-17 15:34:30')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/settings_types" for 127.0.0.1 at 2014-07-17 11:34:30 -0400
+Processing by SettingsTypesController#index as HTML
+  [1m[35mSettingsType Load (0.2ms)[0m  SELECT `settings_types`.* FROM `settings_types`
+  Rendered settings_types/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSettingsType Exists (0.2ms)[0m  SELECT  1 AS one FROM `settings_types`  WHERE `settings_types`.`internal_symbol` = BINARY 'default_value' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `settings_types` (`created_at`, `description`, `internal_symbol`, `updated_at`) VALUES ('2014-07-17 15:34:30', 'Default Value', 'default_value', '2014-07-17 15:34:30')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/settings_types" for 127.0.0.1 at 2014-07-17 11:34:30 -0400
+Processing by SettingsTypesController#index as HTML
+  [1m[36mSettingsType Load (0.2ms)[0m  [1mSELECT `settings_types`.* FROM `settings_types`[0m
+  Rendered settings_types/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSettingsType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `settings_types`  WHERE `settings_types`.`internal_symbol` = BINARY 'default_value' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `settings_types` (`created_at`, `description`, `internal_symbol`, `updated_at`) VALUES ('2014-07-17 15:34:30', 'Default Value', 'default_value', '2014-07-17 15:34:30')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/settings_types/4" for 127.0.0.1 at 2014-07-17 11:34:30 -0400
+Processing by SettingsTypesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSettingsType Load (0.2ms)[0m  SELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 4 LIMIT 1
+  Rendered settings_types/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSettingsType Exists (0.2ms)[0m  SELECT  1 AS one FROM `settings_types`  WHERE `settings_types`.`internal_symbol` = BINARY 'default_value' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `settings_types` (`created_at`, `description`, `internal_symbol`, `updated_at`) VALUES ('2014-07-17 15:34:30', 'Default Value', 'default_value', '2014-07-17 15:34:30')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/settings_types/5" for 127.0.0.1 at 2014-07-17 11:34:30 -0400
+Processing by SettingsTypesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mSettingsType Load (0.2ms)[0m  [1mSELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 5 LIMIT 1[0m
+  Rendered settings_types/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`quarter` = 2 AND `quarterly_budgets`.`year` = 2014
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `quarterly_budgets` (`created_at`, `end_balance`, `quarter`, `start_balance`, `updated_at`, `year`) VALUES ('2014-07-17 15:36:29', 250.0, 2, 500.0, '2014-07-17 15:36:29', 2014)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSettingsType Exists (0.2ms)[0m  SELECT  1 AS one FROM `settings_types`  WHERE `settings_types`.`internal_symbol` = BINARY 'default_value' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `settings_types` (`created_at`, `description`, `internal_symbol`, `updated_at`) VALUES ('2014-07-17 15:36:29', 'Default Value', 'default_value', '2014-07-17 15:36:29')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `expenditures` (`cost`, `created_at`, `item`, `notes`, `purchase_date`, `quarterly_budget_id`, `type_id`, `updated_at`) VALUES (0.0, '2014-07-17 15:36:29', 'Default Item', 'Default Notes', '1993-10-07', 1, 1, '2014-07-17 15:36:29')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/expenditures" for 127.0.0.1 at 2014-07-17 11:36:29 -0400
+Processing by ExpendituresController#index as HTML
+  [1m[35mExpenditure Load (0.3ms)[0m  SELECT `expenditures`.* FROM `expenditures`
+  [1m[36mQuarterlyBudget Load (0.2ms)[0m  [1mSELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 1 LIMIT 1[0m
+  [1m[35mSettingsType Load (0.3ms)[0m  SELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 1 LIMIT 1
+  Rendered expenditures/index.html.erb within layouts/application (55.7ms)
+Completed 200 OK in 111ms (Views: 102.3ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`quarter` = 2 AND `quarterly_budgets`.`year` = 2014
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `quarterly_budgets` (`created_at`, `end_balance`, `quarter`, `start_balance`, `updated_at`, `year`) VALUES ('2014-07-17 15:36:29', 250.0, 2, 500.0, '2014-07-17 15:36:29', 2014)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSettingsType Exists (0.2ms)[0m  SELECT  1 AS one FROM `settings_types`  WHERE `settings_types`.`internal_symbol` = BINARY 'default_value' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `settings_types` (`created_at`, `description`, `internal_symbol`, `updated_at`) VALUES ('2014-07-17 15:36:29', 'Default Value', 'default_value', '2014-07-17 15:36:29')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `expenditures` (`cost`, `created_at`, `item`, `notes`, `purchase_date`, `quarterly_budget_id`, `type_id`, `updated_at`) VALUES (0.0, '2014-07-17 15:36:29', 'Default Item', 'Default Notes', '1993-10-07', 2, 2, '2014-07-17 15:36:29')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/expenditures" for 127.0.0.1 at 2014-07-17 11:36:29 -0400
+Processing by ExpendituresController#index as HTML
+  [1m[35mExpenditure Load (0.3ms)[0m  SELECT `expenditures`.* FROM `expenditures`
+  [1m[36mQuarterlyBudget Load (0.2ms)[0m  [1mSELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 2 LIMIT 1[0m
+  [1m[35mSettingsType Load (0.2ms)[0m  SELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 2 LIMIT 1
+  Rendered expenditures/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`quarter` = 2 AND `quarterly_budgets`.`year` = 2014
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `quarterly_budgets` (`created_at`, `end_balance`, `quarter`, `start_balance`, `updated_at`, `year`) VALUES ('2014-07-17 15:36:29', 250.0, 2, 500.0, '2014-07-17 15:36:29', 2014)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSettingsType Exists (0.2ms)[0m  SELECT  1 AS one FROM `settings_types`  WHERE `settings_types`.`internal_symbol` = BINARY 'default_value' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `settings_types` (`created_at`, `description`, `internal_symbol`, `updated_at`) VALUES ('2014-07-17 15:36:29', 'Default Value', 'default_value', '2014-07-17 15:36:29')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `expenditures` (`cost`, `created_at`, `item`, `notes`, `purchase_date`, `quarterly_budget_id`, `type_id`, `updated_at`) VALUES (0.0, '2014-07-17 15:36:29', 'Default Item', 'Default Notes', '1993-10-07', 3, 3, '2014-07-17 15:36:29')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/expenditures" for 127.0.0.1 at 2014-07-17 11:36:29 -0400
+Processing by ExpendituresController#index as HTML
+  [1m[35mExpenditure Load (0.2ms)[0m  SELECT `expenditures`.* FROM `expenditures`
+  [1m[36mQuarterlyBudget Load (0.2ms)[0m  [1mSELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 3 LIMIT 1[0m
+  [1m[35mSettingsType Load (0.2ms)[0m  SELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 3 LIMIT 1
+  Rendered expenditures/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`quarter` = 2 AND `quarterly_budgets`.`year` = 2014
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `quarterly_budgets` (`created_at`, `end_balance`, `quarter`, `start_balance`, `updated_at`, `year`) VALUES ('2014-07-17 15:36:29', 250.0, 2, 500.0, '2014-07-17 15:36:29', 2014)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSettingsType Exists (0.2ms)[0m  SELECT  1 AS one FROM `settings_types`  WHERE `settings_types`.`internal_symbol` = BINARY 'default_value' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `settings_types` (`created_at`, `description`, `internal_symbol`, `updated_at`) VALUES ('2014-07-17 15:36:29', 'Default Value', 'default_value', '2014-07-17 15:36:29')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `expenditures` (`cost`, `created_at`, `item`, `notes`, `purchase_date`, `quarterly_budget_id`, `type_id`, `updated_at`) VALUES (0.0, '2014-07-17 15:36:29', 'Default Item', 'Default Notes', '1993-10-07', 4, 4, '2014-07-17 15:36:29')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/expenditures/4" for 127.0.0.1 at 2014-07-17 11:36:29 -0400
+Processing by ExpendituresController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mExpenditure Load (0.2ms)[0m  SELECT  `expenditures`.* FROM `expenditures`  WHERE `expenditures`.`id` = 4 LIMIT 1
+  [1m[36mQuarterlyBudget Load (0.3ms)[0m  [1mSELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 4 LIMIT 1[0m
+  [1m[35mSettingsType Load (0.2ms)[0m  SELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 4 LIMIT 1
+  Rendered expenditures/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`quarter` = 2 AND `quarterly_budgets`.`year` = 2014
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `quarterly_budgets` (`created_at`, `end_balance`, `quarter`, `start_balance`, `updated_at`, `year`) VALUES ('2014-07-17 15:36:29', 250.0, 2, 500.0, '2014-07-17 15:36:29', 2014)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSettingsType Exists (0.2ms)[0m  SELECT  1 AS one FROM `settings_types`  WHERE `settings_types`.`internal_symbol` = BINARY 'default_value' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `settings_types` (`created_at`, `description`, `internal_symbol`, `updated_at`) VALUES ('2014-07-17 15:36:29', 'Default Value', 'default_value', '2014-07-17 15:36:29')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `expenditures` (`cost`, `created_at`, `item`, `notes`, `purchase_date`, `quarterly_budget_id`, `type_id`, `updated_at`) VALUES (0.0, '2014-07-17 15:36:29', 'Default Item', 'Default Notes', '1993-10-07', 5, 5, '2014-07-17 15:36:29')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/expenditures/5" for 127.0.0.1 at 2014-07-17 11:36:29 -0400
+Processing by ExpendituresController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mExpenditure Load (0.2ms)[0m  SELECT  `expenditures`.* FROM `expenditures`  WHERE `expenditures`.`id` = 5 LIMIT 1
+  [1m[36mQuarterlyBudget Load (0.2ms)[0m  [1mSELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 5 LIMIT 1[0m
+  [1m[35mSettingsType Load (0.2ms)[0m  SELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 5 LIMIT 1
+  Rendered expenditures/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`quarter` = 2 AND `quarterly_budgets`.`year` = 2014
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `quarterly_budgets` (`created_at`, `end_balance`, `quarter`, `start_balance`, `updated_at`, `year`) VALUES ('2014-07-17 15:36:29', 250.0, 2, 500.0, '2014-07-17 15:36:29', 2014)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/quarterly_budgets" for 127.0.0.1 at 2014-07-17 11:36:29 -0400
+Processing by QuarterlyBudgetsController#index as HTML
+  [1m[36mQuarterlyBudget Load (0.2ms)[0m  [1mSELECT `quarterly_budgets`.* FROM `quarterly_budgets`[0m
+  [1m[35m (0.2ms)[0m  SELECT SUM(`expenditures`.`cost`) AS sum_id FROM `expenditures`  WHERE `expenditures`.`quarterly_budget_id` = 6
+  Rendered quarterly_budgets/index.html.erb within layouts/application (17.5ms)
+Completed 500 Internal Server Error in 19ms
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`quarter` = 2 AND `quarterly_budgets`.`year` = 2014
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `quarterly_budgets` (`created_at`, `end_balance`, `quarter`, `start_balance`, `updated_at`, `year`) VALUES ('2014-07-17 15:36:29', 250.0, 2, 500.0, '2014-07-17 15:36:29', 2014)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/quarterly_budgets" for 127.0.0.1 at 2014-07-17 11:36:29 -0400
+Processing by QuarterlyBudgetsController#index as HTML
+  [1m[36mQuarterlyBudget Load (0.2ms)[0m  [1mSELECT `quarterly_budgets`.* FROM `quarterly_budgets`[0m
+  [1m[35m (0.2ms)[0m  SELECT SUM(`expenditures`.`cost`) AS sum_id FROM `expenditures`  WHERE `expenditures`.`quarterly_budget_id` = 7
+  Rendered quarterly_budgets/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 3ms
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`quarter` = 2 AND `quarterly_budgets`.`year` = 2014
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `quarterly_budgets` (`created_at`, `end_balance`, `quarter`, `start_balance`, `updated_at`, `year`) VALUES ('2014-07-17 15:36:29', 250.0, 2, 500.0, '2014-07-17 15:36:29', 2014)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/quarterly_budgets" for 127.0.0.1 at 2014-07-17 11:36:29 -0400
+Processing by QuarterlyBudgetsController#index as HTML
+  [1m[36mQuarterlyBudget Load (0.2ms)[0m  [1mSELECT `quarterly_budgets`.* FROM `quarterly_budgets`[0m
+  [1m[35m (0.2ms)[0m  SELECT SUM(`expenditures`.`cost`) AS sum_id FROM `expenditures`  WHERE `expenditures`.`quarterly_budget_id` = 8
+  Rendered quarterly_budgets/index.html.erb within layouts/application (40.7ms)
+Completed 500 Internal Server Error in 41ms
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`quarter` = 2 AND `quarterly_budgets`.`year` = 2014
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `quarterly_budgets` (`created_at`, `end_balance`, `quarter`, `start_balance`, `updated_at`, `year`) VALUES ('2014-07-17 15:36:29', 250.0, 2, 500.0, '2014-07-17 15:36:29', 2014)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/quarterly_budgets/9" for 127.0.0.1 at 2014-07-17 11:36:29 -0400
+Processing by QuarterlyBudgetsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mQuarterlyBudget Load (0.2ms)[0m  [1mSELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 9 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT SUM(`expenditures`.`cost`) AS sum_id FROM `expenditures`  WHERE `expenditures`.`quarterly_budget_id` = 9
+  Rendered quarterly_budgets/show.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 5ms
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`quarter` = 2 AND `quarterly_budgets`.`year` = 2014
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `quarterly_budgets` (`created_at`, `end_balance`, `quarter`, `start_balance`, `updated_at`, `year`) VALUES ('2014-07-17 15:36:29', 250.0, 2, 500.0, '2014-07-17 15:36:29', 2014)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/quarterly_budgets/10" for 127.0.0.1 at 2014-07-17 11:36:29 -0400
+Processing by QuarterlyBudgetsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mQuarterlyBudget Load (0.2ms)[0m  [1mSELECT  `quarterly_budgets`.* FROM `quarterly_budgets`  WHERE `quarterly_budgets`.`id` = 10 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT SUM(`expenditures`.`cost`) AS sum_id FROM `expenditures`  WHERE `expenditures`.`quarterly_budget_id` = 10
+  Rendered quarterly_budgets/show.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 3ms
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSettingsType Exists (0.2ms)[0m  SELECT  1 AS one FROM `settings_types`  WHERE `settings_types`.`internal_symbol` = BINARY 'default_value' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `settings_types` (`created_at`, `description`, `internal_symbol`, `updated_at`) VALUES ('2014-07-17 15:36:29', 'Default Value', 'default_value', '2014-07-17 15:36:29')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/settings_types" for 127.0.0.1 at 2014-07-17 11:36:29 -0400
+Processing by SettingsTypesController#index as HTML
+  [1m[36mSettingsType Load (0.3ms)[0m  [1mSELECT `settings_types`.* FROM `settings_types`[0m
+  Rendered settings_types/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSettingsType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `settings_types`  WHERE `settings_types`.`internal_symbol` = BINARY 'default_value' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `settings_types` (`created_at`, `description`, `internal_symbol`, `updated_at`) VALUES ('2014-07-17 15:36:29', 'Default Value', 'default_value', '2014-07-17 15:36:29')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/settings_types" for 127.0.0.1 at 2014-07-17 11:36:29 -0400
+Processing by SettingsTypesController#index as HTML
+  [1m[35mSettingsType Load (0.2ms)[0m  SELECT `settings_types`.* FROM `settings_types`
+  Rendered settings_types/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSettingsType Exists (0.2ms)[0m  SELECT  1 AS one FROM `settings_types`  WHERE `settings_types`.`internal_symbol` = BINARY 'default_value' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `settings_types` (`created_at`, `description`, `internal_symbol`, `updated_at`) VALUES ('2014-07-17 15:36:29', 'Default Value', 'default_value', '2014-07-17 15:36:29')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/settings_types" for 127.0.0.1 at 2014-07-17 11:36:29 -0400
+Processing by SettingsTypesController#index as HTML
+  [1m[36mSettingsType Load (0.2ms)[0m  [1mSELECT `settings_types`.* FROM `settings_types`[0m
+  Rendered settings_types/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSettingsType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `settings_types`  WHERE `settings_types`.`internal_symbol` = BINARY 'default_value' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `settings_types` (`created_at`, `description`, `internal_symbol`, `updated_at`) VALUES ('2014-07-17 15:36:29', 'Default Value', 'default_value', '2014-07-17 15:36:29')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/settings_types/9" for 127.0.0.1 at 2014-07-17 11:36:29 -0400
+Processing by SettingsTypesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mSettingsType Load (0.3ms)[0m  SELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 9 LIMIT 1
+  Rendered settings_types/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSettingsType Exists (0.2ms)[0m  SELECT  1 AS one FROM `settings_types`  WHERE `settings_types`.`internal_symbol` = BINARY 'default_value' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `settings_types` (`created_at`, `description`, `internal_symbol`, `updated_at`) VALUES ('2014-07-17 15:36:29', 'Default Value', 'default_value', '2014-07-17 15:36:29')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/settings_types/10" for 127.0.0.1 at 2014-07-17 11:36:29 -0400
+Processing by SettingsTypesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mSettingsType Load (0.2ms)[0m  [1mSELECT  `settings_types`.* FROM `settings_types`  WHERE `settings_types`.`id` = 10 LIMIT 1[0m
+  Rendered settings_types/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.6ms)[0m  ROLLBACK
