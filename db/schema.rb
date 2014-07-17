@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140708184133) do
+ActiveRecord::Schema.define(version: 20140714190818) do
 
   create_table "expenditures", force: true do |t|
     t.string   "item"
@@ -25,10 +25,18 @@ ActiveRecord::Schema.define(version: 20140708184133) do
     t.datetime "updated_at"
   end
 
+  create_table "items", force: true do |t|
+    t.integer  "type_id"
+    t.string   "name"
+    t.string   "description"
+    t.decimal  "cost",        precision: 10, scale: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "quarterly_budgets", force: true do |t|
-    t.decimal  "start_balance",   precision: 8, scale: 2
-    t.decimal  "current_balance", precision: 8, scale: 2
-    t.decimal  "end_balance",     precision: 8, scale: 2
+    t.decimal  "start_balance", precision: 8, scale: 2
+    t.decimal  "end_balance",   precision: 8, scale: 2
     t.integer  "quarter"
     t.integer  "year"
     t.datetime "created_at"
@@ -59,5 +67,12 @@ ActiveRecord::Schema.define(version: 20140708184133) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "votes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
