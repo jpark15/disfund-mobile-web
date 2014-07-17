@@ -5,8 +5,9 @@
     <tr>
       <th class="col-sm-3">Year-Q#</th>
       <th class="col-sm-3">Starting Balance</th>
+      <th class="col-sm-3">Current Balance</th>
       <th class="col-sm-3">Ending Balance</th>
-      <th class="col-sm-3" colspan="3">Links</th>
+      <th class="col-sm-2" colspan="2">Links</th>
     </tr>
   </thead>
 
@@ -14,11 +15,11 @@
     <% @quarterly_budgets.each do |quarterly_budget| %>
       <%= content_tag_for(:tr, quarterly_budget) do %>
         <td><%= quarterly_budget.to_s %></td>
-        <td><%= number_to_currency(quarterly_budget.start_balance.to_f) %></td>
-        <td><%= number_to_currency(quarterly_budget.end_balance.to_f) %></td>
+        <td><%= number_to_currency quarterly_budget.start_balance %></td>
+        <td><%= number_to_currency quarterly_budget.current_balance %></td>
+        <td><%= quarterly_budget.end_balance_to_s %></td>
         <td><%= link_to 'Show', quarterly_budget %></td>
         <td><%= link_to 'Edit', edit_quarterly_budget_path(quarterly_budget) %></td>
-        <td><%= link_to 'Destroy', quarterly_budget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
     <% end %>
   </tbody>

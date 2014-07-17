@@ -20,8 +20,13 @@
     <%= f.text_field :quarter %>
   </div>
   <div class="field">
+    <% if QuarterlyBudget.any? %>
+      <% value = QuarterlyBudget.last.current_balance %>
+    <% else %>
+      <% value = nil %>
+    <% end %>
     <%= f.label :start_balance %><br>
-    <%= f.text_field :start_balance %>
+    <%= f.text_field :start_balance, :value => value %>
   </div>
   <div class="actions">
     <%= f.submit "Update Quarterly Budget"%>
