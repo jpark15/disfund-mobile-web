@@ -18,7 +18,7 @@
       <tr>
         <td><%= item.name %></td>
         <td><%= item.description %></td>
-        <td><%= SettingsType.find(item.type_id).description %></td>
+        <td><%= item.settings_type && item.settings_type.description %></td>
         <td><%= number_to_currency item.cost %></td>
         <td><%= item.vote_count %></td>
         <% if current_user == nil %>

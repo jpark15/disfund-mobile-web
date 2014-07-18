@@ -13,10 +13,7 @@ class QuarterlyBudget < ActiveRecord::Base
   validate :quarterly_budget_does_not_exist
 
   def end_balance_to_s
-    if end_balance == nil
-      return '---'
-    end
-    number_to_currency end_balance
+    end_balance ? number_to_currency(end_balance) : '---'
   end
 
   def set_default_values
@@ -30,8 +27,7 @@ class QuarterlyBudget < ActiveRecord::Base
   end
 
   def set_end_balance
-    # self.end_balance = self.current_balance
-    # QuarterlyBudget.update(self.id, end_balance: current_balance)
+    update_attribute(end_balance: current_balance)
   end
 
   def current_balance

@@ -2,7 +2,7 @@ task :check_date_for_new_quarterly_budget => :environment do
   # if Time.now.day == 1 && Time.now.month%3 == 1
   if 1 == 1 && 4%3 == 1
     # month = Time.now.month
-    month = 4
+    month = 10
     if month < 4
       quarter = 1
     elsif month < 7
@@ -18,8 +18,9 @@ end
 
 def create_quarterly_budget(quarter)
   roll_over = SettingsType.find_or_create_by(internal_symbol: "roll_over")
-  last_balance = QuarterlyBudget.last.current_balance
-  QuarterlyBudget.last.set_end_balance
+  prev_budget = QuarterlyBudget.order(quarter: :desc, year: :desc).first
+  prev_budget.set_end_balance
+  last_balance = prev_budget.current_balance
 
   # New Quarterly Budget starts with a default start balance of $3,000 (subject to change)
   new_quarterly_budget = QuarterlyBudget.create(quarter: quarter, year: Time.now.year, start_balance: 3000)
