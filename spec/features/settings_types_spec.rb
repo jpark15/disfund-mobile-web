@@ -20,7 +20,6 @@ describe "SettingsTypes" do
           headers = [
             'Description',
             '',
-            '',
             'Links']
           headers.each do |header|
             expect(find(:header_at_index, headers.index(header)+1)).to have_content(header)

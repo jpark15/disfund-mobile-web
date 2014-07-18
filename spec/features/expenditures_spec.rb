@@ -75,7 +75,7 @@ describe "Expenditures" do
       within('.inline') do
         lab_val_hash = {
           'Quarterly Budget:' => expenditure.quarterly_budget,
-          'Purchase Date:' => '1993-10-07',
+          'Purchase Date:' => 'Oct 07, 1993',
           'Item:' => 'Default Item',
           'Type:' => 'Default Value',
           'Cost:' => '$0.00',

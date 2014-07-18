@@ -20,6 +20,7 @@ describe "QuarterlyBudgets" do
           headers = [
             'Year-Q#',
             'Starting Balance',
+            'Current Balance',
             'Ending Balance',
             'Links']
           headers.each do |header|
@@ -35,7 +36,8 @@ describe "QuarterlyBudgets" do
           head_val_hash = {
             'Year-Q#' => '2014-Q2',
             'Starting Balance' => '$500.00',
-            'Ending Balance' => '$250.00'}
+            'Current Balance' => '$500.00',
+            'Ending Balance' => '---'}
           head_val_hash.each do |header, value|
             expect(find(:value_under_header, header)).to have_content(value)
           end
@@ -67,8 +69,8 @@ describe "QuarterlyBudgets" do
           'Year:' => '2014',
           'Quarter:' => '2',
           'Start Balance:' => '$500.00',
-          'Current Balance:' => '$250.00',
-          'End Balance:' => '$250.00'}
+          'Current Balance:' => '$500.00',
+          'End Balance:' => '---'}
         lab_val_hash.each do |label, value|
           expect(find(:dd_for_label, label)).to have_content(value)
         end
