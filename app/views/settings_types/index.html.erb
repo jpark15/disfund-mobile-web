@@ -3,10 +3,9 @@
 <table id="table1" class="table table-striped">
   <thead>
     <tr>
-      <th class="col-sm-4">Description</th>
-      <th class="col-sm-2"></th>
-      <th class="col-sm-2"></th>
-      <th class="col-sm-2" colspan="2">Links</th>
+      <th class="col-sm-5">Description</th>
+      <th class="col-sm-5"></th>
+      <th class="col-sm-2">Links</th>
     </tr>
   </thead>
 
@@ -15,8 +14,6 @@
       <%= content_tag_for(:tr, settings_type) do %>
         <td><%= settings_type.description %></td>
         <td></td>
-        <td></td>
-        <td><%= link_to 'Show', settings_type %></td>
         <td><%= link_to 'Edit', edit_settings_type_path(settings_type) %></td>
         <td></td>
       <% end %>

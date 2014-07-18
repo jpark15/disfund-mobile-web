@@ -29,7 +29,7 @@ class SettingsTypesController < ApplicationController
 
     respond_to do |format|
       if @settings_type.save
-        format.html { redirect_to @settings_type, notice: 'Settings type was successfully created.' }
+        format.html { redirect_to settings_types_path, notice: 'Settings type was successfully created.' }
         format.json { render :show, status: :created, location: @settings_type }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class SettingsTypesController < ApplicationController
   def update
     respond_to do |format|
       if @settings_type.update(settings_type_params)
-        format.html { redirect_to @settings_type, notice: 'Settings type was successfully updated.' }
+        format.html { redirect_to settings_types_path, notice: 'Settings type was successfully updated.' }
         format.json { render :show, status: :ok, location: @settings_type }
       else
         format.html { render :edit }

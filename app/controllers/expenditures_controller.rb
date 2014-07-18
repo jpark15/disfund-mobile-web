@@ -35,7 +35,7 @@ class ExpendituresController < ApplicationController
 
     respond_to do |format|
       if @expenditure.save
-        format.html { redirect_to @expenditure, notice: 'Expenditure was successfully created.' }
+        format.html { redirect_to expenditures_path, notice: 'Expenditure was successfully created.' }
         format.json { render :show, status: :created, location: @expenditure }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class ExpendituresController < ApplicationController
   def update
     respond_to do |format|
       if @expenditure.update(expenditure_params)
-        format.html { redirect_to @expenditure, notice: 'Expenditure was successfully updated.' }
+        format.html { redirect_to expenditures_path, notice: 'Expenditure was successfully updated.' }
         format.json { render :show, status: :ok, location: @expenditure }
       else
         format.html { render :edit }
