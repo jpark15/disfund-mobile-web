@@ -30,7 +30,7 @@
   </div>
   <div class="field">
     <%= f.label :purchase_date %><br>
-    <%= f.text_field :purchase_date, :value => (@expenditure.purchase_date.blank? ? '' : @expenditure.purchase_date.strftime('%b %d, %y')), class: 'date_field' %>
+    <%= f.text_field :purchase_date, :value => (@expenditure.purchase_date.blank? ? '' : @expenditure.purchase_date.strftime('%b %d, %Y')), class: 'date_field' %>
   </div>
   <div class="field">
     <%= f.label :type_id %><br>

@@ -4,7 +4,7 @@
     <fieldset>
       <dl class="inline">
         <dt><label><%= 'Quarterly Budget:' %></label></dt><dd><%= @expenditure.quarterly_budget.to_s %></dd><br>
-        <dt><label><%= 'Purchase Date:' %></label></dt><dd><%= @expenditure.purchase_date.strftime('%b %d, %y') %></dd><br>
+        <dt><label><%= 'Purchase Date:' %></label></dt><dd><%= @expenditure.purchase_date.strftime('%b %d, %Y') %></dd><br>
         <dt><label><%= 'Item:' %></label></dt><dd><%= @expenditure.item %></dd><br>
         <dt><label><%= 'Type:' %></label></dt><dd><%= SettingsType.find(@expenditure.type_id).description %></dd><br>
         <dt><label><%= 'Cost:' %></label></dt><dd><%= number_to_currency @expenditure.cost %></dd><br>

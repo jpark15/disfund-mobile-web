@@ -33,7 +33,7 @@
   <tbody>
     <% @expenditures.each do |expenditure| %>
       <tr>
-        <td><%= expenditure.purchase_date.strftime('%b %d, %y') %></td>
+        <td><%= expenditure.purchase_date.strftime('%b %d, %Y') %></td>
         <td><%= number_to_currency expenditure.cost %></td>
         <td><%= expenditure.item %></td>
         <td><%= SettingsType.find(expenditure.type_id).description %></td>

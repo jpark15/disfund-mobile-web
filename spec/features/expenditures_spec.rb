@@ -38,7 +38,7 @@ describe "Expenditures" do
         within(:row_for, expenditure) do
           head_val_hash = {
             'Year-Q#' => '2014-Q2',
-            'Purchase Date' => '1993-10-07',
+            'Purchase Date' => 'Oct 07, 1993',
             'Cost' => '$0.00',
             'Item' => 'Default Item',
             'Type' => 'Default Value',
