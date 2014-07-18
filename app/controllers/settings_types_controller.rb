@@ -2,10 +2,12 @@ class SettingsTypesController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
   before_action :set_settings_type, only: [:show, :edit, :update, :destroy]
 
+  helper_method :sort_column, :sort_direction
+
   # GET /settings_types
   # GET /settings_types.json
   def index
-    @settings_types = SettingsType.all
+    @settings_types = SettingsType.order(sort_column + ' ' + sort_direction)
   end
 
   # GET /settings_types/1
@@ -63,6 +65,15 @@ class SettingsTypesController < ApplicationController
   end
 
   private
+    # Sorting
+    def sort_column
+      SettingsType.column_names.include?(params[:sort]) ? params[:sort] : 'description'
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_settings_type
       @settings_type = SettingsType.find(params[:id])
