@@ -6,11 +6,11 @@
       <th class="col-sm-1">Year-Q#</th>
       <th class="col-sm-2">Purchase Date</th>
       <th class="col-sm-1">Cost</th>
-      <th class="col-sm-1">Item</th>
+      <th class="col-sm-2">Item</th>
       <th class="col-sm-1">Type</th>
       <th class="col-sm-4">Notes</th>
       <th class="col-sm-1">Refunded</th>
-      <th class="col-sm-1" colspan="2">Links</th>
+      <th class="col-sm-1">Links</th>
     </tr>
   </thead>
 
@@ -24,7 +24,6 @@
         <td><%= SettingsType.find(expenditure.type_id).description %></td>
         <td><%= expenditure.notes %></td>
         <td><%= expenditure.refunded.to_s.humanize %></td>
-        <td><%= link_to 'Show', expenditure %></td>
         <td><%= link_to 'Edit', edit_expenditure_path(expenditure), 'data-no-turbolink' => true %></td>
       <% end %>
     <% end %>
