@@ -2,10 +2,12 @@ class ExpendituresController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
   before_action :set_expenditure, only: [:show, :edit, :update, :destroy]
 
+  helper_method :sort_column, :sort_direction
+
   # GET /expenditures
   # GET /expenditures.json
   def index
-    @expenditures = Expenditure.all
+    @expenditures = Expenditure.order(sort_column + ' ' + sort_direction)
   end
 
   # GET /expenditures/1
@@ -69,6 +71,15 @@ class ExpendituresController < ApplicationController
   end
 
   private
+    # Sorting
+    def sort_column
+      Expenditure.column_names.include?(params[:sort]) ? params[:sort] : 'purchase_date'
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
+    end
+
     def load_arrays_for_create
       @quarterly_budgets = QuarterlyBudget.all.map{|budget| [budget, budget.id]}
       @types = SettingsType.all.map{|type| [type.description, type.id]}
