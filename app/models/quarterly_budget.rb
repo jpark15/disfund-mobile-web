@@ -11,19 +11,35 @@ class QuarterlyBudget < ActiveRecord::Base
   validates :year, numericality: { only_integer: true }, presence: true
 
   validate :quarterly_budget_does_not_exist
+  validate :quarter_is_between_one_and_four
+  validate :year_has_four_digits
 
+  # Custom Validations
+  def quarterly_budget_does_not_exist
+    if QuarterlyBudget.where(quarter: quarter, year: year).any?
+      errors.add(:quarterly_budget, "already exists")
+    end
+  end
+
+  def quarter_is_between_one_and_four
+    unless quarter >= 1 && quarter <= 4
+      errors.add(:quarter, "has invalid value")
+    end
+  end
+
+  def year_has_four_digits
+    unless year.to_s.length == 4
+      errors.add(:year, "has invalid number of digits")
+    end
+  end
+
+  # Other Methods
   def end_balance_to_s
     end_balance ? number_to_currency(end_balance) : '---'
   end
 
   def set_default_values
     end_balance = nil
-  end
-
-  def quarterly_budget_does_not_exist
-    if QuarterlyBudget.where(quarter: quarter, year: year).any?
-      errors.add(:quarterly_budget, "already exists")
-    end
   end
 
   def set_end_balance
