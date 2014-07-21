@@ -6,13 +6,15 @@ class QuarterlyBudget < ActiveRecord::Base
 
   before_validation :set_default_values
 
-  validates :start_balance, numericality: true, presence: true
-  validates :quarter, numericality: { only_integer: true }, presence: true
   validates :year, numericality: { only_integer: true }, presence: true
+  validate :year_has_four_digits
+
+  validates :quarter, numericality: { only_integer: true }, presence: true
+  validate :quarter_is_between_one_and_four
+
+  validates :start_balance, numericality: true, presence: true
 
   validate :quarterly_budget_does_not_exist
-  validate :quarter_is_between_one_and_four
-  validate :year_has_four_digits
 
   # Custom Validations
   def quarterly_budget_does_not_exist
@@ -22,7 +24,7 @@ class QuarterlyBudget < ActiveRecord::Base
   end
 
   def quarter_is_between_one_and_four
-    unless quarter >= 1 && quarter <= 4
+    unless quarter.nil? || quarter >= 1 && quarter <= 4
       errors.add(:quarter, "has invalid value")
     end
   end

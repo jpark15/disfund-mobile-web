@@ -28,8 +28,8 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
+    load_arrays_for_create
     @item = Item.new(item_params)
-
     respond_to do |format|
       if @item.save
         format.html { redirect_to items_path, notice: 'Item was successfully created.' }

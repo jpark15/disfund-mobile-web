@@ -26,6 +26,9 @@
       <%= @quarterly_budget.to_s %>
     <% else %>
       <%= f.select(:quarterly_budget_id, @quarterly_budgets) %>
+      <% if @quarterly_budgets.blank? %>
+        <p class="missing-data-warning">Must create a quarterly budget first since none are currently available!</p>
+      <% end %>
     <% end %>
   </div>
   <div class="field">
@@ -35,6 +38,9 @@
   <div class="field">
     <%= f.label :type_id %><br>
     <%= f.select(:type_id, @types) %>
+    <% if @types.blank? %>
+      <p class="missing-data-warning">Must create a quarterly budget first since none are currently available!</p>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :notes %><br>
