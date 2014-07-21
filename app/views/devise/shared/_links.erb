@@ -1,16 +1,16 @@
 <%- if controller_name != 'sessions' %>
   <h4>Already have an account?</h4>
-  <%= link_to "Sign in", new_session_path(resource_name) %><br><br>
+  <%= link_to "Sign in", new_session_path(resource_name), 'data-no-turbolink' => true %><br><br>
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <h4>Don't have an account?</h4>
-  <%= link_to "Sign up", new_registration_path(resource_name) %><br><br>
+  <%= link_to "Sign up", new_registration_path(resource_name), 'data-no-turbolink' => true %><br><br>
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
   <h4>Forgot your password?</h4>
-  <%= link_to "Reset password", new_password_path(resource_name) %><br><br>
+  <%= link_to "Reset password", new_password_path(resource_name), 'data-no-turbolink' => true %><br><br>
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
