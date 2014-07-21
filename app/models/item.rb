@@ -4,6 +4,18 @@ class Item < ActiveRecord::Base
 
   has_many :votes
 
+  validates :name, presence: true
+  validates :cost, numericality: true, presence: true
+
+  validate :settings_type_not_nil
+
+  # Custom Validation
+  def settings_type_not_nil
+    if type_id.nil?
+      errors.add(:type_id, "not selected or available")
+    end
+  end
+
   def vote_count
     votes.count
   end

@@ -21,7 +21,11 @@
   </div>
   <div class="field">
     <%= f.label :type_id %><br>
-    <%= f.select(:type_id, @types) %>
+    <% if @types.blank? %>
+      <%= f.label :type_id, "Must create an expenditure type first since none are currently available!" %><br>
+    <% else %>
+      <%= f.select(:type_id, @types) %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :cost %><br>

@@ -1,10 +1,12 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
+  helper_method :sort_column, :sort_direction
+
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = Item.order(sort_column + ' ' + sort_direction)
   end
 
   # GET /items/1
@@ -64,6 +66,15 @@ class ItemsController < ApplicationController
   end
 
   private
+    # Sorting
+    def sort_column
+      Item.column_names.include?(params[:sort]) ? params[:sort] : 'name'
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
+    end
+
     def load_arrays_for_create
       @types = SettingsType.all.map{|type| [type.description, type.id]}
     end
