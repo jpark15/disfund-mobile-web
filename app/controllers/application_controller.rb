@@ -7,7 +7,9 @@ class ApplicationController < ActionController::Base
 
   def check_user
     current_uri = request.env['PATH_INFO']
-    unless current_uri == new_user_session_path
+    unless current_uri == new_user_session_path ||
+            current_uri == new_user_registration_path ||
+            current_uri == new_user_password_path
       redirect_to new_user_session_path unless current_user
     end
   end
