@@ -11,8 +11,8 @@ class Item < ActiveRecord::Base
 
   # Custom Validation
   def settings_type_not_nil
-    if type_id.nil?
-      errors.add(:type_id, "not selected or available")
+    if type_id.blank?
+      errors.add(:type_id, "not selected or unavailable")
     end
   end
 

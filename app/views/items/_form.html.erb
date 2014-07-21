@@ -21,8 +21,8 @@
   </div>
   <div class="field">
     <%= f.label :type_id %><br>
-    <% if @types.blank? %>
-      <%= f.label :type_id, "Must create an expenditure type first since none are currently available!" %><br>
+    <% if @types.nil? %>
+      <p>Must create an expenditure type first since none are currently available!</p><br>
     <% else %>
       <%= f.select(:type_id, @types) %>
     <% end %>
