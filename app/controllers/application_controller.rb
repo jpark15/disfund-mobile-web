@@ -9,11 +9,14 @@ class ApplicationController < ActionController::Base
     current_uri = request.env['PATH_INFO']
     unless current_uri == new_user_session_path ||
             current_uri == new_user_registration_path ||
-            current_uri == new_user_password_path
-      if current_user.nil?
-        redirect_to new_user_session_path
-      end
+            current_uri == new_user_password_path ||
+            current_user
+      redirect_to new_user_session_path
     end
+  end
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   private
