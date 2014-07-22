@@ -1,17 +1,12 @@
-<% if current_user %>
-  <h1>Expenditure Type</h1>
+<h1>Expenditure Type</h1>
 
-    <div class="attributes">
-      <fieldset>
-        <dl class="inline">
-          <dt><label><strong>Description:</strong></label></dt><dd><%= @settings_type.description %></dd>
-        </dl>
-      </fieldset>
-    </div>
+  <div class="attributes">
+    <fieldset>
+      <dl class="inline">
+        <dt><label><strong>Description:</strong></label></dt><dd><%= @settings_type.description %></dd>
+      </dl>
+    </fieldset>
+  </div>
 
-  <%= link_to 'Edit', edit_settings_type_path(@settings_type) %> |
-  <%= link_to 'Back', settings_types_path %>
-<% else %>
-  <br><br><br><br>
-  <h2 class="centered-warning">Please log in at the 'Sign In' page to view the Expenditure Type!</h2>
-<% end %>
+<%= link_to 'Edit', edit_settings_type_path(@settings_type) %> |
+<%= link_to 'Back', settings_types_path %>

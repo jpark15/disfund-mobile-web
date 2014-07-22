@@ -1,6 +1,6 @@
 class ExpendituresController < ApplicationController
   before_action :set_expenditure, only: [:show, :edit, :update, :destroy]
-  before_action :check_admin, only: [:new, :create, :edit]
+  before_action :check_admin, only: [:new, :create, :edit, :show]
   helper_method :sort_column, :sort_direction
 
   # GET /expenditures

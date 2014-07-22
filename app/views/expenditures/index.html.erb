@@ -11,7 +11,9 @@
         <th class="col-sm-1">Type</th>
         <th class="col-sm-4">Notes</th>
         <th class="col-sm-1"><%= sortable "refunded" %></th>
-        <th class="col-sm-1">Links</th>
+        <% if current_user && current_user.admin %>
+          <th class="col-sm-1">Links</th>
+        <% end %>
       </tr>
     </thead>
 
@@ -25,13 +27,16 @@
           <td><%= SettingsType.find(expenditure.type_id).description %></td>
           <td><%= expenditure.notes %></td>
           <td><%= expenditure.refunded.to_s.humanize %></td>
-          <td><%= link_to 'Edit', edit_expenditure_path(expenditure), 'data-no-turbolink' => true %></td>
+          <% if current_user && current_user.admin %>
+            <td><%= link_to 'Edit', edit_expenditure_path(expenditure), 'data-no-turbolink' => true %></td>
+          <% end %>
         <% end %>
       <% end %>
     </tbody>
   </table>
-
-  <%= link_to 'Create New Expenditure', new_expenditure_path, 'data-no-turbolink' => true %>
+  <% if current_user && current_user.admin %>
+    <%= link_to 'Create New Expenditure', new_expenditure_path, 'data-no-turbolink' => true %>
+  <% end %>
 <% else %>
   <br><br><br><br>
   <h2 class="centered-warning">Please log in at the 'Sign In' page to view the Expenditures page!</h2>

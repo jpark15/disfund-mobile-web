@@ -6,7 +6,9 @@
       <tr>
         <th class="col-sm-5"><%= sortable "description" %></th>
         <th class="col-sm-5"></th>
-        <th class="col-sm-2">Links</th>
+        <% if current_user && current_user.admin %>
+          <th class="col-sm-2">Links</th>
+        <% end %>
       </tr>
     </thead>
 
@@ -15,14 +17,18 @@
         <%= content_tag_for(:tr, settings_type) do %>
           <td><%= settings_type.description %></td>
           <td></td>
-          <td><%= link_to 'Edit', edit_settings_type_path(settings_type) %></td>
+          <% if current_user && current_user.admin %>
+            <td><%= link_to 'Edit', edit_settings_type_path(settings_type) %></td>
+          <% end %>
           <td></td>
         <% end %>
       <% end %>
     </tbody>
   </table>
 
-  <%= link_to 'Create New Type', new_settings_type_path, 'data-no-turbolink' => true %>
+  <% if current_user && current_user.admin %>
+    <%= link_to 'Create New Type', new_settings_type_path, 'data-no-turbolink' => true %>
+  <% end %>
 <% else %>
   <br><br><br><br>
   <h2 class="centered-warning">Please log in at the 'Sign In' page to view the Expenditure Types page!</h2>

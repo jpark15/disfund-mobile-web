@@ -24,12 +24,12 @@
 
     <thead>
       <tr>
-        <th>Purchase Date</th>
-        <th>Cost</th>
-        <th>Item</th>
-        <th>Type</th>
-        <th>Notes</th>
-        <th>Refunded</th>
+        <th class="col-sm-2">Purchase Date</th>
+        <th class="col-sm-1">Cost</th>
+        <th class="col-sm-2">Item</th>
+        <th class="col-sm-1">Type</th>
+        <th class="col-sm-5">Notes</th>
+        <th class="col-sm-1">Refunded</th>
       </tr>
     </thead>
 
@@ -47,7 +47,9 @@
     </tbody>
   </table>
 
-  <%= link_to 'Create New Expenditure', new_quarterly_budget_expenditure_path(@quarterly_budget.id), 'data-no-turbolink' => true %>
+  <% if current_user && current_user.admin %>
+    <%= link_to 'Create New Expenditure', new_quarterly_budget_expenditure_path(@quarterly_budget.id), 'data-no-turbolink' => true %>
+  <% end %>
 <% else %>
   <br><br><br><br>
   <h2 class="centered-warning">Please log in at the 'Sign In' page to view the Quarterly Budget!</h2>

@@ -1,23 +1,18 @@
-<% if current_user %>
-  <h1>Expenditure Details</h1>
+<h1>Expenditure Details</h1>
 
-    <div class="attributes">
-      <fieldset>
-        <dl class="inline">
-          <dt><label><%= 'Quarterly Budget:' %></label></dt><dd><%= @expenditure.quarterly_budget.to_s %></dd><br>
-          <dt><label><%= 'Purchase Date:' %></label></dt><dd><%= @expenditure.purchase_date.strftime('%b %d, %Y') %></dd><br>
-          <dt><label><%= 'Item:' %></label></dt><dd><%= @expenditure.item %></dd><br>
-          <dt><label><%= 'Type:' %></label></dt><dd><%= SettingsType.find(@expenditure.type_id).description %></dd><br>
-          <dt><label><%= 'Cost:' %></label></dt><dd><%= number_to_currency @expenditure.cost %></dd><br>
-          <dt><label><%= 'Notes:' %></label></dt><dd><%= @expenditure.notes %></dd><br>
-          <dt><label><%= 'Refunded:' %></label></dt><dd><%= @expenditure.refunded.to_s.humanize %></dd>
-        </dl>
-      </fieldset>
-    </div>
+  <div class="attributes">
+    <fieldset>
+      <dl class="inline">
+        <dt><label><%= 'Quarterly Budget:' %></label></dt><dd><%= @expenditure.quarterly_budget.to_s %></dd><br>
+        <dt><label><%= 'Purchase Date:' %></label></dt><dd><%= @expenditure.purchase_date.strftime('%b %d, %Y') %></dd><br>
+        <dt><label><%= 'Item:' %></label></dt><dd><%= @expenditure.item %></dd><br>
+        <dt><label><%= 'Type:' %></label></dt><dd><%= SettingsType.find(@expenditure.type_id).description %></dd><br>
+        <dt><label><%= 'Cost:' %></label></dt><dd><%= number_to_currency @expenditure.cost %></dd><br>
+        <dt><label><%= 'Notes:' %></label></dt><dd><%= @expenditure.notes %></dd><br>
+        <dt><label><%= 'Refunded:' %></label></dt><dd><%= @expenditure.refunded.to_s.humanize %></dd>
+      </dl>
+    </fieldset>
+  </div>
 
-  <%= link_to 'Edit', edit_expenditure_path(@expenditure) %> |
-  <%= link_to 'Back', expenditures_path %>
-<% else %> 
-  <br><br><br><br>
-  <h2 class="centered-warning">Please log in at the 'Sign In' page to view the Expenditure!</h2>
-<% end %>
+<%= link_to 'Edit', edit_expenditure_path(@expenditure) %> |
+<%= link_to 'Back', expenditures_path %>

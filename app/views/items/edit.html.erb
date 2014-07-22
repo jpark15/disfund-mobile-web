@@ -1,5 +1,10 @@
-<h1>Editing item</h1>
+<% if current_user %> 
+  <h1>Editing item</h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Back', items_path %>
+  <%= link_to 'Back', items_path %>
+<% else %>
+  <br><br><br><br>
+  <h2 class="centered-warning">Please log in at the 'Sign In' page to edit an Item!</h2>
+<% end %>
