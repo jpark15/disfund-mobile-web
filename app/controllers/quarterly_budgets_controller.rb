@@ -1,5 +1,6 @@
 class QuarterlyBudgetsController < ApplicationController
   before_action :set_quarterly_budget, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin, only: [:new, :create, :edit]
 
   # GET /quarterly_budgets
   # GET /quarterly_budgets.json

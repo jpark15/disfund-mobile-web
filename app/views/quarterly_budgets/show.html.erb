@@ -11,7 +11,9 @@
     </fieldset>
   </div>
 
-<%= link_to 'Edit', edit_quarterly_budget_path(@quarterly_budget) %> |
+<% if current_user.admin %>
+<%= link_to 'Edit', edit_quarterly_budget_path(@quarterly_budget) %> | 
+<% end %>
 <%= link_to 'Back', quarterly_budgets_path %>
 <br>
 <br>

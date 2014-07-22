@@ -13,4 +13,12 @@ class ApplicationController < ActionController::Base
       redirect_to new_user_session_path unless current_user
     end
   end
+
+  private
+  def check_admin
+    unless current_user.admin
+      flash[:error] = "You must be an admin for that action!"
+      redirect_to root_path
+    end
+  end
 end

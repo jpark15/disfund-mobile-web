@@ -19,10 +19,16 @@
         <td><%= number_to_currency quarterly_budget.current_balance %></td>
         <td><%= quarterly_budget.end_balance_to_s %></td>
         <td><%= link_to 'Show', quarterly_budget %></td>
-        <td><%= link_to 'Edit', edit_quarterly_budget_path(quarterly_budget) %></td>
+        <td>
+          <% if current_user.admin %>
+            <%= link_to 'Edit', edit_quarterly_budget_path(quarterly_budget) %>
+          <% end %>
+        </td>
       <% end %>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Create New Quarterly Budget', new_quarterly_budget_path, 'data-no-turbolink' => true %>
+<% if current_user.admin %>
+  <%= link_to 'Create New Quarterly Budget', new_quarterly_budget_path, 'data-no-turbolink' => true %>
+<% end %>
