@@ -31,7 +31,7 @@
   </table>
 
   <% if current_user && current_user.admin %>
-    <%= link_to 'Create New Quarterly Budget', new_quarterly_budget_path, 'data-no-turbolink' => true %>
+    <%= link_to 'Create New Quarterly Budget', new_quarterly_budget_path, 'data-no-turbolink' => true, :class => "lower-link" %>
   <% end %>
 <% else %>
   <br><br><br><br>

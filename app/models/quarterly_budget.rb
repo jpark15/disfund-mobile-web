@@ -12,16 +12,14 @@ class QuarterlyBudget < ActiveRecord::Base
 
   validates :start_balance, numericality: true, presence: true
 
-  validates :end_balance, numericality: true
-
   validate :quarterly_budget_does_not_exist
 
-  # after_save :set_default_values
+  after_save :set_default_values
 
-  # # Setting Defaults
-  # def set_default_values
-  #   end_balance ||= nil
-  # end
+  # Setting Defaults
+  def set_default_values
+    end_balance ||= nil
+  end
 
   # Custom Validations
   def quarterly_budget_does_not_exist
@@ -44,7 +42,7 @@ class QuarterlyBudget < ActiveRecord::Base
 
   # Other Methods
   def end_balance_to_s
-    # end_balance ? number_to_currency(end_balance) : '---'
+    end_balance ? number_to_currency(end_balance) : '---'
   end
 
   def set_end_balance

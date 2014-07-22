@@ -35,7 +35,7 @@
     </tbody>
   </table>
   <% if current_user && current_user.admin %>
-    <%= link_to 'Create New Expenditure', new_expenditure_path, 'data-no-turbolink' => true %>
+    <%= link_to 'Create New Expenditure', new_expenditure_path, 'data-no-turbolink' => true, :class => "lower-link" %>
   <% end %>
 <% else %>
   <br><br><br><br>
