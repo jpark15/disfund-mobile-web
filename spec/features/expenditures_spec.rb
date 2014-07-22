@@ -8,6 +8,10 @@ describe "Expenditures" do
   let(:show_path) { polymorphic_path([expenditure]) }
 
   describe "index" do
+    if Rails.env.development?
+      @current_user ||= User.where(email: 'test@email.com', password: 'testpass', purchaser: true).first
+    end
+    
     before { visit index_path }
 
     it "should have title 'Listing All Expenditures'" do
