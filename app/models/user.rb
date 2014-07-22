@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
 
   has_many :votes
 
+  before_validation :non_admin_user_default
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -9,10 +11,7 @@ class User < ActiveRecord::Base
 
   validates :admin, inclusion: { in: [true, false] }
 
-  before_save :non_admin_user
-
   def non_admin_user
-    self.admin ||= false
+    admin = false
   end
-         
 end
