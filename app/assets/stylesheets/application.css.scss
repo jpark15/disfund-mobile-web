@@ -82,3 +82,13 @@
   background-image: -webkit-linear-gradient(top, #5E9ACA, #3B6F92);
   background-image: -moz-linear-gradient(#5E9ACA, #3B6F92);
 }
+
+p.error {
+  text-align: left;
+  color: red;
+}
+
+p.notice {
+  text-align:right;
+  color: green;
+}
