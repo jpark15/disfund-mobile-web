@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   validates :admin, inclusion: { in: [true, false] }
 
-  def non_admin_user
-    admin = false
+  def non_admin_user_default
+    self.admin = false
   end
 end
