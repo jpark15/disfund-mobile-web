@@ -1,49 +1,54 @@
-<h1>Quarterly Budget Details</h1>
-  <div class="attributes">
-    <fieldset>
-      <dl class="inline">
-        <dt><label><%= 'Year:' %></label></dt><dd><%= @quarterly_budget.year %></dd><br>
-        <dt><label><%= 'Quarter:' %></label></dt><dd><%= @quarterly_budget.quarter %></dd><br>
-        <dt><label><%= 'Start Balance:' %></label></dt><dd><%= number_to_currency @quarterly_budget.start_balance %></dd><br>
-        <dt><label><%= 'Current Balance:' %></label></dt><dd><%= number_to_currency @quarterly_budget.current_balance %></dd><br>
-        <dt><label><%= 'End Balance:' %></label></dt><dd><%= @quarterly_budget.end_balance_to_s %></dd>
-      </dl>
-    </fieldset>
-  </div>
+<% if current_user %>
+  <h1>Quarterly Budget Details</h1>
+    <div class="attributes">
+      <fieldset>
+        <dl class="inline">
+          <dt><label><%= 'Year:' %></label></dt><dd><%= @quarterly_budget.year %></dd><br>
+          <dt><label><%= 'Quarter:' %></label></dt><dd><%= @quarterly_budget.quarter %></dd><br>
+          <dt><label><%= 'Start Balance:' %></label></dt><dd><%= number_to_currency @quarterly_budget.start_balance %></dd><br>
+          <dt><label><%= 'Current Balance:' %></label></dt><dd><%= number_to_currency @quarterly_budget.current_balance %></dd><br>
+          <dt><label><%= 'End Balance:' %></label></dt><dd><%= @quarterly_budget.end_balance_to_s %></dd>
+        </dl>
+      </fieldset>
+    </div>
 
-<% if current_user.admin %>
-<%= link_to 'Edit', edit_quarterly_budget_path(@quarterly_budget) %> | 
-<% end %>
-<%= link_to 'Back', quarterly_budgets_path %>
-<br>
-<br>
+  <% if current_user && current_user.admin %>
+  <%= link_to 'Edit', edit_quarterly_budget_path(@quarterly_budget) %> | 
+  <% end %>
+  <%= link_to 'Back', quarterly_budgets_path %>
+  <br>
+  <br>
 
-<h2>Listing All Corresponding Expenditures</h1>
-<table id="table1" class="table table-striped">
+  <h2>Listing All Corresponding Expenditures</h1>
+  <table id="table1" class="table table-striped">
 
-  <thead>
-    <tr>
-      <th>Purchase Date</th>
-      <th>Cost</th>
-      <th>Item</th>
-      <th>Type</th>
-      <th>Notes</th>
-      <th>Refunded</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @expenditures.each do |expenditure| %>
+    <thead>
       <tr>
-        <td><%= expenditure.purchase_date.strftime('%b %d, %Y') %></td>
-        <td><%= number_to_currency expenditure.cost %></td>
-        <td><%= expenditure.item %></td>
-        <td><%= SettingsType.find(expenditure.type_id).description %></td>
-        <td><%= expenditure.notes %></td>
-        <td><%= expenditure.refunded.to_s.humanize %></td>
+        <th>Purchase Date</th>
+        <th>Cost</th>
+        <th>Item</th>
+        <th>Type</th>
+        <th>Notes</th>
+        <th>Refunded</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<%= link_to 'Create New Expenditure', new_quarterly_budget_expenditure_path(@quarterly_budget.id), 'data-no-turbolink' => true %>
+    <tbody>
+      <% @expenditures.each do |expenditure| %>
+        <tr>
+          <td><%= expenditure.purchase_date.strftime('%b %d, %Y') %></td>
+          <td><%= number_to_currency expenditure.cost %></td>
+          <td><%= expenditure.item %></td>
+          <td><%= SettingsType.find(expenditure.type_id).description %></td>
+          <td><%= expenditure.notes %></td>
+          <td><%= expenditure.refunded.to_s.humanize %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to 'Create New Expenditure', new_quarterly_budget_expenditure_path(@quarterly_budget.id), 'data-no-turbolink' => true %>
+<% else %>
+  <br><br><br><br>
+  <h2 class="centered-warning">Please log in at the 'Sign In' page to view the Quarterly Budget!</h2>
+<% end %>

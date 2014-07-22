@@ -1,34 +1,39 @@
-<h1>Listing All Quarterly Budgets</h1>
+<% if current_user %>
+  <h1>Listing All Quarterly Budgets</h1>
 
-<table id="table1" class="table table-striped">
-  <thead>
-    <tr>
-      <th class="col-sm-3">Year-Q#</th>
-      <th class="col-sm-3">Starting Balance</th>
-      <th class="col-sm-3">Current Balance</th>
-      <th class="col-sm-3">Ending Balance</th>
-      <th class="col-sm-2" colspan="2">Links</th>
-    </tr>
-  </thead>
+  <table id="table1" class="table table-striped">
+    <thead>
+      <tr>
+        <th class="col-sm-3">Year-Q#</th>
+        <th class="col-sm-3">Starting Balance</th>
+        <th class="col-sm-3">Current Balance</th>
+        <th class="col-sm-3">Ending Balance</th>
+        <th class="col-sm-2" colspan="2">Links</th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <% @quarterly_budgets.each do |quarterly_budget| %>
-      <%= content_tag_for(:tr, quarterly_budget) do %>
-        <td><%= quarterly_budget.to_s %></td>
-        <td><%= number_to_currency quarterly_budget.start_balance %></td>
-        <td><%= number_to_currency quarterly_budget.current_balance %></td>
-        <td><%= quarterly_budget.end_balance_to_s %></td>
-        <td><%= link_to 'Show', quarterly_budget %></td>
-        <td>
-          <% if current_user.admin %>
-            <%= link_to 'Edit', edit_quarterly_budget_path(quarterly_budget) %>
-          <% end %>
-        </td>
+    <tbody>
+      <% @quarterly_budgets.each do |quarterly_budget| %>
+        <%= content_tag_for(:tr, quarterly_budget) do %>
+          <td><%= quarterly_budget.to_s %></td>
+          <td><%= number_to_currency quarterly_budget.start_balance %></td>
+          <td><%= number_to_currency quarterly_budget.current_balance %></td>
+          <td><%= quarterly_budget.end_balance_to_s %></td>
+          <td><%= link_to 'Show', quarterly_budget %></td>
+          <td>
+            <% if current_user && current_user.admin %>
+              <%= link_to 'Edit', edit_quarterly_budget_path(quarterly_budget) %>
+            <% end %>
+          </td>
+        <% end %>
       <% end %>
-    <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<% if current_user.admin %>
-  <%= link_to 'Create New Quarterly Budget', new_quarterly_budget_path, 'data-no-turbolink' => true %>
+  <% if current_user && current_user.admin %>
+    <%= link_to 'Create New Quarterly Budget', new_quarterly_budget_path, 'data-no-turbolink' => true %>
+  <% end %>
+<% else %>
+  <br><br><br><br>
+  <h2 class="centered-warning">Please log in at the 'Sign In' page to view the Quarterly Budgets page!</h2>
 <% end %>

@@ -1,33 +1,38 @@
-<h1>Listing All Expenditures</h1>
+<% if current_user %>
+  <h1>Listing All Expenditures</h1>
 
-<table id="table1" class="table table-striped">
-  <thead>
-    <tr>
-      <th class="col-sm-1">Year-Q#</th>
-      <th class="col-sm-2"><%= sortable "purchase_date" %></th>
-      <th class="col-sm-1"><%= sortable "cost" %></th>
-      <th class="col-sm-2"><%= sortable "item" %></th>
-      <th class="col-sm-1">Type</th>
-      <th class="col-sm-4">Notes</th>
-      <th class="col-sm-1"><%= sortable "refunded" %></th>
-      <th class="col-sm-1">Links</th>
-    </tr>
-  </thead>
+  <table id="table1" class="table table-striped">
+    <thead>
+      <tr>
+        <th class="col-sm-1">Year-Q#</th>
+        <th class="col-sm-2"><%= sortable "purchase_date" %></th>
+        <th class="col-sm-1"><%= sortable "cost" %></th>
+        <th class="col-sm-2"><%= sortable "item" %></th>
+        <th class="col-sm-1">Type</th>
+        <th class="col-sm-4">Notes</th>
+        <th class="col-sm-1"><%= sortable "refunded" %></th>
+        <th class="col-sm-1">Links</th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <% @expenditures.each do |expenditure| %>
-      <%= content_tag_for(:tr, expenditure) do %>
-        <td><%= QuarterlyBudget.find(expenditure.quarterly_budget_id).to_s %></td>
-        <td><%= expenditure.purchase_date.strftime('%b %d, %Y') %></td>
-        <td><%= number_to_currency expenditure.cost %></td>
-        <td><%= expenditure.item %></td>
-        <td><%= SettingsType.find(expenditure.type_id).description %></td>
-        <td><%= expenditure.notes %></td>
-        <td><%= expenditure.refunded.to_s.humanize %></td>
-        <td><%= link_to 'Edit', edit_expenditure_path(expenditure), 'data-no-turbolink' => true %></td>
+    <tbody>
+      <% @expenditures.each do |expenditure| %>
+        <%= content_tag_for(:tr, expenditure) do %>
+          <td><%= QuarterlyBudget.find(expenditure.quarterly_budget_id).to_s %></td>
+          <td><%= expenditure.purchase_date.strftime('%b %d, %Y') %></td>
+          <td><%= number_to_currency expenditure.cost %></td>
+          <td><%= expenditure.item %></td>
+          <td><%= SettingsType.find(expenditure.type_id).description %></td>
+          <td><%= expenditure.notes %></td>
+          <td><%= expenditure.refunded.to_s.humanize %></td>
+          <td><%= link_to 'Edit', edit_expenditure_path(expenditure), 'data-no-turbolink' => true %></td>
+        <% end %>
       <% end %>
-    <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<%= link_to 'Create New Expenditure', new_expenditure_path, 'data-no-turbolink' => true %>
+  <%= link_to 'Create New Expenditure', new_expenditure_path, 'data-no-turbolink' => true %>
+<% else %>
+  <br><br><br><br>
+  <h2 class="centered-warning">Please log in at the 'Sign In' page to view the Expenditures page!</h2>
+<% end %>

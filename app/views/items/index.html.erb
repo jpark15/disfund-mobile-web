@@ -1,40 +1,45 @@
-<h1>Listing All Items</h1>
+<% if current_user %>  
+  <h1>Listing All Items</h1>
 
-<table id="table1" class="table table-striped">
-  <thead>
-    <tr>
-      <th class="col-sm-1"><%= sortable 'name' %></th>
-      <th class="col-sm-5"><%= sortable 'description' %></th>
-      <th class="col-sm-1">Type</th>
-      <th class="col-sm-1"><%= sortable 'cost' %></th>
-      <th class="col-sm-1">Total Votes</th>
-      <th class="col-sm-2"></th>
-      <th class="col-sm-1">Links</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @items.each do |item| %>
+  <table id="table1" class="table table-striped">
+    <thead>
       <tr>
-        <td><%= item.name %></td>
-        <td><%= item.description %></td>
-        <td><%= item.settings_type && item.settings_type.description %></td>
-        <td><%= number_to_currency item.cost %></td>
-        <td align="center"><%= item.vote_count %></td>
-        <% if current_user == nil %>
-          <td></td>
-        <% else %>
-          <% if item.has_vote_by_user(current_user.id) == nil %>
-            <td align="center"><%= button_to 'Upvote', votes_path(vote: {user_id: current_user.id, item_id: item.id} ), class: "upvote-button-style" %></td>
-          <% else %>
-            <% vote = Vote.find_by(user_id: current_user.id, item_id: item.id) %>
-            <td align="center"><%= button_to 'Downvote', vote, method: :delete , class: "downvote-button-style" %></td>
-          <% end %>
-        <% end %>
-        <td><%= link_to 'Edit', edit_item_path(item.id) %></td>
+        <th class="col-sm-1"><%= sortable 'name' %></th>
+        <th class="col-sm-5"><%= sortable 'description' %></th>
+        <th class="col-sm-1">Type</th>
+        <th class="col-sm-1"><%= sortable 'cost' %></th>
+        <th class="col-sm-1">Total Votes</th>
+        <th class="col-sm-2"></th>
+        <th class="col-sm-1">Links</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<%= link_to 'Create New Item', new_item_path, 'data-no-turbolink' => true %>
+    <tbody>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= item.name %></td>
+          <td><%= item.description %></td>
+          <td><%= item.settings_type && item.settings_type.description %></td>
+          <td><%= number_to_currency item.cost %></td>
+          <td align="center"><%= item.vote_count %></td>
+          <% if current_user == nil %>
+            <td></td>
+          <% else %>
+            <% if item.has_vote_by_user(current_user.id) == nil %>
+              <td align="center"><%= button_to 'Upvote', votes_path(vote: {user_id: current_user.id, item_id: item.id} ), class: "upvote-button-style" %></td>
+            <% else %>
+              <% vote = Vote.find_by(user_id: current_user.id, item_id: item.id) %>
+              <td align="center"><%= button_to 'Downvote', vote, method: :delete , class: "downvote-button-style" %></td>
+            <% end %>
+          <% end %>
+          <td><%= link_to 'Edit', edit_item_path(item.id) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to 'Create New Item', new_item_path, 'data-no-turbolink' => true %>
+<% else %>
+  <br><br><br><br>
+  <h2 class="centered-warning">Please log in at the 'Sign In' page to view the Voting page!</h2>
+<% end %>
