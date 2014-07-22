@@ -17,12 +17,19 @@
 
 @import "bootstrap";
 
-th.sortable-cols {
+.table-striped thead tr th a:hover {
+  color: black;
+}
 
+.table-striped thead tr th a, a.focus {
+  background-color: transparent;
+  text-decoration: none;
+  color: #666666;
 }
 
 a.lower-link {
   background-color: #d0e0f0;
+  text-decoration: none;
 }
 
 .centered-warning {
