@@ -10,7 +10,9 @@ class ApplicationController < ActionController::Base
     unless current_uri == new_user_session_path ||
             current_uri == new_user_registration_path ||
             current_uri == new_user_password_path
-      redirect_to new_user_session_path unless current_user
+      if current_user.nil?
+        redirect_to new_user_session_path
+      end
     end
   end
 
