@@ -7,6 +7,9 @@ gem 'rails', '4.1.1'
 # Users
 gem 'devise'
 
+# Seed Data
+gem 'seed-fu', '~> 2.3'
+
 # DATABASE
 gem 'mysql2', '~> 0.3.11'
 # Use SCSS for stylesheets
