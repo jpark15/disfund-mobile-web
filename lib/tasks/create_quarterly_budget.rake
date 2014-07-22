@@ -1,8 +1,6 @@
 task :check_date_for_new_quarterly_budget => :environment do
-  # if Time.now.day == 1 && Time.now.month%3 == 1
-  if 1 == 1 && 4%3 == 1
-    # month = Time.now.month
-    month = 10
+  if Time.now.day == 1 && Time.now.month%3 == 1
+    month = Time.now.month
     if month < 4
       quarter = 1
     elsif month < 7
