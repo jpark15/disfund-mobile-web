@@ -16,7 +16,7 @@
 
     <tbody>
       <% @items.each do |item| %>
-        <tr>
+        <%= content_tag_for(:tr, item) do %>
           <td><%= item.name %></td>
           <td><%= item.description %></td>
           <td><%= item.settings_type && item.settings_type.description %></td>
@@ -33,7 +33,7 @@
             <% end %>
           <% end %>
           <td><%= link_to 'Edit', edit_item_path(item.id) %></td>
-        </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>

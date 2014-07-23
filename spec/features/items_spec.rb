@@ -37,7 +37,7 @@ describe "QuarterlyBudgets" do
           head_val_hash = {
             'Name' => 'Chipotle',
             'Description' => 'Burrito',
-            'Type' => 'Food',
+            'Type' => 'Default Value',
             'Cost' => '$10.00',
             'Total Votes' => ''}
           head_val_hash.each do |header, value|

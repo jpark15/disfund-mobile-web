@@ -5,10 +5,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
-    # sql = "SELECT COUNT(vote_id) FROM (SELECT Items.id AS item_id, Votes.id AS vote_id FROM Votes LEFT JOIN Items ON Items.id=Votes.item_id) test_table GROUP BY item_id;"
-    # records_array = ActiveRecord::Base.connection.execute(sql)
-    # @items = Item.order(records_array)
+    @items = Item.order_votes
   end
 
   # GET /items/1

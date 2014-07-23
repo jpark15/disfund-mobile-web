@@ -27,4 +27,15 @@ class Item < ActiveRecord::Base
   def get_vote(id_of_item, id_of_user)
     votes.where(votes: {user_id: id_of_user, item_id: id_of_item}).first
   end
+
+  def self.order_votes
+    sql = <<SQL
+      select items.*, count(votes.id) as votes_count 
+      from items 
+      left join votes on votes.item_id = items.id 
+      group by items.id 
+      order by votes_count desc;
+SQL
+    find_by_sql(sql)
+  end
 end

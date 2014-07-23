@@ -35,14 +35,14 @@
 
     <tbody>
       <% @expenditures.each do |expenditure| %>
-        <tr>
+        <%= content_tag_for(:tr, expenditure) do %>
           <td><%= expenditure.purchase_date.strftime('%b %d, %Y') %></td>
           <td><%= number_to_currency expenditure.cost %></td>
           <td><%= expenditure.item %></td>
           <td><%= SettingsType.find(expenditure.type_id).description %></td>
           <td><%= expenditure.notes %></td>
           <td><%= expenditure.refunded.to_s.humanize %></td>
-        </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>

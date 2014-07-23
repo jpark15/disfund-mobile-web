@@ -108,7 +108,6 @@ describe "QuarterlyBudgets" do
     end
 
     it 'contains all column specific values in row for corresponding expenditures' do
-      save_and_open_page
       within_table('table1') do
         within(:row_for, expenditure) do
           head_val_hash = {
