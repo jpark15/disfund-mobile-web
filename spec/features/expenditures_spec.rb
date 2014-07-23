@@ -1,16 +1,13 @@
 require 'rails_helper'
 
 describe "Expenditures" do
-
+  login_admin_user
   subject!(:expenditure) { FactoryGirl.create(:expenditure) }
 
   let(:index_path) { polymorphic_path([:expenditures]) }
   let(:show_path) { polymorphic_path([expenditure]) }
 
   describe "index" do
-    if Rails.env.development?
-      @current_user ||= User.where(email: 'test@email.com', password: 'testpass', purchaser: true).first
-    end
     
     before { visit index_path }
 

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "SettingsTypes" do
-  
+  login_admin_user
   subject!(:settings_type) { FactoryGirl.create(:settings_type) }
 
   let(:index_path) { polymorphic_path([:settings_types]) }

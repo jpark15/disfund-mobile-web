@@ -27,6 +27,7 @@ group :test do
   gem 'launchy'
   gem "factory_girl_rails", "~> 4.0"
   gem 'shoulda-matchers', require: false
+  gem 'rack_session_access'
 end
 
 group :development, :test do

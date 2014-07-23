@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "QuarterlyBudgets" do
-
+  login_admin_user
   subject!(:quarterly_budget) { FactoryGirl.create(:quarterly_budget, quarter: 2) }
 
   let(:index_path) { polymorphic_path([:quarterly_budgets]) }
