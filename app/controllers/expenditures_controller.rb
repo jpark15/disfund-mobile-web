@@ -6,7 +6,7 @@ class ExpendituresController < ApplicationController
   # GET /expenditures
   # GET /expenditures.json
   def index
-    @expenditures = Expenditure.order(sort_column + ' ' + sort_direction)
+    @expenditures = Expenditure.order('purchase_date asc')
   end
 
   # GET /expenditures/1
