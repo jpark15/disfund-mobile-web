@@ -51,6 +51,12 @@ describe "Expenditures" do
         end
       end
     end
+
+    it "should have create new expenditure button" do
+      if current_user.admin
+        expect(find('a.lower-link')).to have_content('Create New Expenditure')
+      end
+    end
   end
 
   describe "show" do

@@ -39,6 +39,12 @@ describe "SettingsTypes" do
         end
       end
     end
+
+    it "should have create new type button" do
+      if current_user.admin
+        expect(find('a.lower-link')).to have_content('Create New Type')
+      end
+    end
   end
 
   describe "show" do
@@ -61,6 +67,12 @@ describe "SettingsTypes" do
         lab_val_hash.each do |label, value|
           expect(find(:dd_for_label, label)).to have_content(value)
         end
+      end
+    end
+
+    it "should have create new type button" do
+      if current_user.admin
+        expect(page).to have_content('Edit' && 'Back')
       end
     end
   end

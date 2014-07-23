@@ -2,7 +2,10 @@ require 'rails_helper'
 
 describe "QuarterlyBudgets" do
   login_admin_user
-  subject!(:quarterly_budget) { FactoryGirl.create(:quarterly_budget, quarter: 2) }
+  let!(:expenditure) { FactoryGirl.create(:expenditure) }
+  let!(:quarterly_budget) { expenditure.quarterly_budget }
+  # subject!(:quarterly_budget) { FactoryGirl.create(:quarterly_budget, quarter: 2) }
+  # let(:expenditure) { FactoryGirl.create(:expenditure) }
 
   let(:index_path) { polymorphic_path([:quarterly_budgets]) }
   let(:show_path) { polymorphic_path([quarterly_budget]) }
@@ -44,6 +47,12 @@ describe "QuarterlyBudgets" do
         end
       end
     end
+
+    it "should have create new expenditure button" do
+      if current_user.admin
+        expect(find('a.lower-link')).to have_content('Create New Quarterly Budget')
+      end
+    end
   end
 
   describe "show" do
@@ -75,6 +84,49 @@ describe "QuarterlyBudgets" do
           expect(find(:dd_for_label, label)).to have_content(value)
         end
       end
+    end
+
+    it 'should have heading listing all corresponding expenditures' do
+      expect(page).to have_content('Listing All Corresponding Expenditures')
+    end
+
+    it 'shows the correct expenditures headers in order' do
+      within_table('table1') do
+        within('thead') do
+          headers = [
+            'Purchase Date',
+            'Cost',
+            'Item',
+            'Type',
+            'Notes',
+            'Refunded']
+          headers.each do |header|
+            expect(find(:header_at_index, headers.index(header)+1)).to have_content(header)
+          end
+        end
+      end
+    end
+
+    it 'contains all column specific values in row for corresponding expenditures' do
+      save_and_open_page
+      within_table('table1') do
+        within(:row_for, expenditure) do
+          head_val_hash = {
+            'Purchase Date' => 'Oct 07, 1993',
+            'Cost' => '$0.00',
+            'Item' => 'Default Item',
+            'Type' => 'Default Value',
+            'Notes' => 'Default Notes',
+            'Refunded' => 'False'}
+          head_val_hash.each do |header, value|
+            expect(find(:value_under_header, header)).to have_content(value)
+          end
+        end
+      end
+    end
+
+    it 'should have heading listing all corresponding expenditures' do
+      expect(page).to have_content('Create New Expenditure')
     end
   end
 end
