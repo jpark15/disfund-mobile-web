@@ -5,7 +5,10 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.order(sort_column + ' ' + sort_direction)
+    @items = Item.all
+    # sql = "SELECT COUNT(vote_id) FROM (SELECT Items.id AS item_id, Votes.id AS vote_id FROM Votes LEFT JOIN Items ON Items.id=Votes.item_id) test_table GROUP BY item_id;"
+    # records_array = ActiveRecord::Base.connection.execute(sql)
+    # @items = Item.order(records_array)
   end
 
   # GET /items/1
@@ -65,15 +68,6 @@ class ItemsController < ApplicationController
   end
 
   private
-    # Sorting
-    def sort_column
-      Item.column_names.include?(params[:sort]) ? params[:sort] : 'name'
-    end
-
-    def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
-    end
-
     def load_arrays_for_create
       @types = SettingsType.all.map{|type| [type.description, type.id]}
     end

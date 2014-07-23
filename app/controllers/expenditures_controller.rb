@@ -6,7 +6,7 @@ class ExpendituresController < ApplicationController
   # GET /expenditures
   # GET /expenditures.json
   def index
-    @expenditures = Expenditure.order('purchase_date asc')
+    @expenditures = Expenditure.order('purchase_date desc')
   end
 
   # GET /expenditures/1
@@ -70,15 +70,6 @@ class ExpendituresController < ApplicationController
   end
 
   private
-    # Sorting
-    def sort_column
-      Expenditure.column_names.include?(params[:sort]) ? params[:sort] : 'purchase_date'
-    end
-
-    def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
-    end
-
     def load_arrays_for_create
       @quarterly_budgets = QuarterlyBudget.all.map{|budget| [budget, budget.id]}
       @types = SettingsType.all.map{|type| [type.description, type.id]}
