@@ -18,7 +18,7 @@
           <td><%= quarterly_budget.to_s %></td>
           <td><%= number_to_currency quarterly_budget.start_balance %></td>
           <td><%= number_to_currency quarterly_budget.current_balance %></td>
-          <td><%= quarterly_budget.end_balance_to_s %></td>
+          <td><%= quarterly_budget.end_balance ? number_to_currency(quarterly_budget.end_balance) : '---' %></td>
           <td><%= link_to 'Show', quarterly_budget %></td>
           <td>
             <% if current_user && current_user.admin %>

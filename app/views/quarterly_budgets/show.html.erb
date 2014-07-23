@@ -7,7 +7,7 @@
           <dt><label><%= 'Quarter:' %></label></dt><dd><%= @quarterly_budget.quarter %></dd><br>
           <dt><label><%= 'Start Balance:' %></label></dt><dd><%= number_to_currency @quarterly_budget.start_balance %></dd><br>
           <dt><label><%= 'Current Balance:' %></label></dt><dd><%= number_to_currency @quarterly_budget.current_balance %></dd><br>
-          <dt><label><%= 'End Balance:' %></label></dt><dd><%= @quarterly_budget.end_balance_to_s %></dd>
+          <dt><label><%= 'End Balance:' %></label></dt><dd><%= @quarterly_budget.end_balance ? number_to_currency(@quarterly_budget.end_balance) : '---' %></dd>
         </dl>
       </fieldset>
     </div>
