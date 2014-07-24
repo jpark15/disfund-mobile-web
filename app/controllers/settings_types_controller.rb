@@ -6,7 +6,7 @@ class SettingsTypesController < ApplicationController
   # GET /settings_types
   # GET /settings_types.json
   def index
-    @settings_types = SettingsType.order('description desc')
+    @settings_types = SettingsType.order('description asc')
   end
 
   # GET /settings_types/1
