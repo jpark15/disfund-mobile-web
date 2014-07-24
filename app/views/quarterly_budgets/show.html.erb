@@ -50,6 +50,7 @@
   <% if current_user && current_user.admin %>
     <%= link_to 'Create New Expenditure', new_quarterly_budget_expenditure_path(@quarterly_budget.id), 'data-no-turbolink' => true, :class => "lower-link" %>
   <% end %>
+  <br><br><br><br><br><br><br>
 <% else %>
   <br><br><br><br>
   <h2 class="centered-warning">Please log in at the 'Sign In' page to view the Quarterly Budget!</h2>

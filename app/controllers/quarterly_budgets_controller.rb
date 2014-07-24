@@ -6,6 +6,7 @@ class QuarterlyBudgetsController < ApplicationController
   # GET /quarterly_budgets.json
   def index
     @quarterly_budgets = QuarterlyBudget.order('year desc', 'quarter desc')
+    @expenditures = Expenditure.order('purchase_date desc')
   end
 
   # GET /quarterly_budgets/1
