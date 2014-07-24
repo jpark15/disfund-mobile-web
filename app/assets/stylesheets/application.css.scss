@@ -17,6 +17,15 @@
 
 @import "bootstrap";
 
+h1, h2, h1.home-h {
+  color: #285e8e;
+}
+
+a.btn, a.btn-primary, a.btn-lg {
+  color: white;
+  text-decoration: none;
+}
+
 .table-striped thead tr th a:hover {
   color: black;
 }
