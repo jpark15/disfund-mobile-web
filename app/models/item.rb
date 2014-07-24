@@ -16,6 +16,7 @@ class Item < ActiveRecord::Base
     end
   end
 
+  # Other Methods
   def vote_count
     votes.count
   end

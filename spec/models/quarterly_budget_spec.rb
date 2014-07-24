@@ -8,7 +8,6 @@ describe QuarterlyBudget do
     it { should validate_presence_of :quarter }
     it { should validate_presence_of :year }
     it { should validate_presence_of :start_balance }
-    it { should validate_presence_of :end_balance }
   end
 
   context "associations" do
@@ -16,12 +15,12 @@ describe QuarterlyBudget do
   end
 
   context "methods" do
-    it "has a working toString method" do
-      test_budget.to_s.should eq '2014-Q3'
+    it "has a working set end balance method" do
+      test_budget.set_end_balance
     end
 
-    it "has a working end balance to string method" do
-      test_budget.end_balance_to_s.should eq '---'
+    it "has a working toString method" do
+      test_budget.to_s.should eq '2014-Q3'
     end
 
     it "has a working current balance method" do

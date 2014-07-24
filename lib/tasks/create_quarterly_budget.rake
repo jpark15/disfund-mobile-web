@@ -16,7 +16,7 @@ end
 
 def create_quarterly_budget(quarter)
   roll_over = SettingsType.find_or_create_by(internal_symbol: "roll_over")
-  prev_budget = QuarterlyBudget.order(quarter: :desc, year: :desc).first
+  prev_budget = QuarterlyBudget.order(year: :desc, quarter: :desc).first
   prev_budget.set_end_balance
   last_balance = prev_budget.current_balance
 

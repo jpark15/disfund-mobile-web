@@ -14,13 +14,6 @@ class QuarterlyBudget < ActiveRecord::Base
 
   validate :quarterly_budget_does_not_exist
 
-  # after_save :set_default_values
-
-  # # Setting Defaults
-  # def set_default_values
-  #   end_balance ||= nil
-  # end
-
   # Custom Validations
   def quarterly_budget_does_not_exist
     if QuarterlyBudget.where(quarter: quarter, year: year).any?
@@ -42,7 +35,7 @@ class QuarterlyBudget < ActiveRecord::Base
 
   # Other Methods
   def set_end_balance
-    update_attribute(end_balance: current_balance)
+    update_attribute(:end_balance, current_balance)
   end
 
   def current_balance
