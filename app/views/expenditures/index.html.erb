@@ -37,6 +37,7 @@
   <% if current_user && current_user.admin %>
     <%= link_to 'Create New Expenditure', new_expenditure_path, 'data-no-turbolink' => true, :class => "lower-link" %>
   <% end %>
+  <br><br><br><br><br><br><br>
 <% else %>
   <br><br><br><br>
   <h2 class="centered-warning">Please log in at the 'Sign In' page to view the Expenditures page!</h2>
