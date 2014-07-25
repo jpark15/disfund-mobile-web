@@ -43,7 +43,7 @@ class QuarterlyBudget < ActiveRecord::Base
   end
 
   def total_costs
-    expenditures.sum(:cost)
+    expenditures.where(refunded: false).sum(:cost)
   end
 
   def to_s
