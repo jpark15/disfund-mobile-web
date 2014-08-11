@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <% if QuarterlyBudget.any? %>
-      <% value = QuarterlyBudget.last.current_balance %>
+      <% value = @quarterly_budget.start_balance %>
     <% else %>
       <% value = nil %>
     <% end %>
