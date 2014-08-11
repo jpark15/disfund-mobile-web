@@ -2,19 +2,8 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  
-  # helper_method :current_user
-  # before_filter :check_user
 
-  # def check_user
-  #   current_uri = request.env['PATH_INFO']
-  #   unless current_uri == new_user_session_path ||
-  #           current_uri == new_user_registration_path ||
-  #           current_uri == new_user_password_path ||
-  #           current_user
-  #     redirect_to new_user_session_path
-  #   end
-  # end
+  before_filter :prepare_for_mobile
 
   if Rails.env.test?
     def current_user
@@ -28,5 +17,19 @@ class ApplicationController < ActionController::Base
       flash[:error] = "You must be an admin for that action!"
       redirect_to root_path
     end
+  end
+
+  def mobile_device?
+    if session[:mobile_param]
+      session[:mobile_param] == '1'
+    else
+      request.user_agent =~ /Mobile|webOS/
+    end
+  end
+  helper_method :mobile_device?
+
+  def prepare_for_mobile
+    session[:mobile_param] = params[:mobile] if params[:mobile]
+    #request.format = :mobile if mobile_device?
   end
 end

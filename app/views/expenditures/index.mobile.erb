@@ -1,0 +1,35 @@
+<h1>Mobile Specific View!</h1>
+
+<h1>Listing All Expenditures</h1>
+
+  <table id="table1" class="table table-striped">
+    <thead>
+      <tr>
+        <th class="col-sm-3">Year-Q#</th>
+        <th class="col-sm-3">Purchase Date</th>
+        <th class="col-sm-3">Cost</th>
+        <th class="col-sm-3">Item</th>
+        <% if current_user && current_user.admin %>
+          <th class="col-sm-1">Links</th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @expenditures.each do |expenditure| %>
+        <%= content_tag_for(:tr, expenditure) do %>
+          <td><%= QuarterlyBudget.find(expenditure.quarterly_budget_id).to_s %></td>
+          <td><%= expenditure.purchase_date.strftime('%b %d, %Y') %></td>
+          <td><%= number_to_currency expenditure.cost %></td>
+          <td><%= expenditure.item %></td>
+          <% if current_user && current_user.admin %>
+            <td><%= link_to 'Edit', edit_expenditure_path(expenditure), 'data-no-turbolink' => true %></td>
+          <% end %>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <% if current_user && current_user.admin %>
+    <%= link_to 'Create New Expenditure', new_expenditure_path, 'data-no-turbolink' => true, :class => "lower-link" %>
+  <% end %>
+  <br><br><br><br><br><br><br>
